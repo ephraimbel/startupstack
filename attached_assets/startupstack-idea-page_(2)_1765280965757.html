@@ -1,0 +1,1514 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ClaimPilot - StartupStack</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: #FAFAF8;
+      color: #1A1A1A;
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Scrollbar styling */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #F3F2EF;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #D1D1D1;
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #B8B8B8;
+    }
+
+    /* Navigation */
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(250, 250, 248, 0.85);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid #E8E6E1;
+      padding: 0 32px;
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-left {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+    }
+
+    .nav-back {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: #6B6B6B;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 500;
+      transition: color 0.15s;
+    }
+
+    .nav-back:hover {
+      color: #3D3D3D;
+    }
+
+    .nav-divider {
+      width: 1px;
+      height: 20px;
+      background: #E8E6E1;
+    }
+
+    .nav-id {
+      font-size: 13px;
+      color: #8B8B8B;
+      font-family: 'SF Mono', 'Menlo', monospace;
+      letter-spacing: 0.02em;
+    }
+
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .btn {
+      padding: 8px 16px;
+      border-radius: 8px;
+      font-size: 13px;
+      font-weight: 500;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.15s;
+      border: none;
+    }
+
+    .btn-secondary {
+      background: white;
+      border: 1px solid #E8E6E1;
+      color: #3D3D3D;
+    }
+
+    .btn-secondary:hover {
+      background: #F7F5F2;
+      border-color: #D1D1D1;
+    }
+
+    .btn-primary {
+      background: #1B4D3E;
+      color: white;
+    }
+
+    .btn-primary:hover {
+      background: #153D31;
+    }
+
+    /* Layout */
+    .layout {
+      display: flex;
+    }
+
+    /* Sidebar */
+    .sidebar {
+      width: 280px;
+      min-height: calc(100vh - 64px);
+      background: #FFFFFF;
+      border-right: 1px solid #E8E6E1;
+      position: sticky;
+      top: 64px;
+      height: calc(100vh - 64px);
+      overflow-y: auto;
+      flex-shrink: 0;
+      transition: width 0.2s ease;
+    }
+
+    .sidebar.collapsed {
+      width: 60px;
+    }
+
+    .sidebar-content {
+      padding: 20px 16px;
+    }
+
+    .sidebar-title {
+      font-size: 11px;
+      font-weight: 600;
+      color: #8B8B8B;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 16px;
+      padding: 0 8px;
+    }
+
+    .category {
+      margin-bottom: 8px;
+    }
+
+    .category-header {
+      width: 100%;
+      padding: 10px 8px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: transparent;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background-color 0.1s;
+    }
+
+    .category-header:hover {
+      background: #F7F5F2;
+    }
+
+    .category-left {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .category-icon {
+      font-size: 14px;
+    }
+
+    .category-name {
+      font-size: 13px;
+      font-weight: 500;
+      color: #3D3D3D;
+    }
+
+    .category-count {
+      font-size: 11px;
+      color: #8B8B8B;
+      background: #F3F2EF;
+      padding: 2px 6px;
+      border-radius: 4px;
+    }
+
+    .category-arrow {
+      transition: transform 0.15s;
+    }
+
+    .category-arrow.expanded {
+      transform: rotate(90deg);
+    }
+
+    .category-items {
+      margin-left: 8px;
+      margin-top: 4px;
+      display: none;
+    }
+
+    .category-items.expanded {
+      display: block;
+    }
+
+    .deliverable-item {
+      width: 100%;
+      padding: 10px 12px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: transparent;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: all 0.1s;
+      border-left: 2px solid transparent;
+      text-align: left;
+    }
+
+    .deliverable-item:hover {
+      background: #F7F5F2;
+    }
+
+    .deliverable-item.active {
+      background: #F7F5F2;
+      border-left-color: #1B4D3E;
+    }
+
+    .deliverable-name {
+      font-size: 13px;
+      color: #5D5D5D;
+    }
+
+    .deliverable-item.active .deliverable-name {
+      color: #1B4D3E;
+      font-weight: 500;
+    }
+
+    .status-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+    }
+
+    .status-dot.generated {
+      background: #10B981;
+    }
+
+    .status-dot.pending {
+      border: 1.5px solid #D1D1D1;
+    }
+
+    .sidebar-legend {
+      margin-top: 24px;
+      padding: 12px;
+      background: #F7F5F2;
+      border-radius: 8px;
+      font-size: 11px;
+      color: #6B6B6B;
+    }
+
+    .legend-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 6px;
+    }
+
+    .legend-item:last-child {
+      margin-bottom: 0;
+    }
+
+    /* Main Content */
+    .main {
+      flex: 1;
+      min-width: 0;
+    }
+
+    /* Header */
+    .idea-header {
+      background: #FFFFFF;
+      border-bottom: 1px solid #E8E6E1;
+      padding: 40px 48px;
+    }
+
+    .header-content {
+      max-width: 900px;
+    }
+
+    .tags-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 16px;
+      flex-wrap: wrap;
+    }
+
+    .tag {
+      padding: 4px 10px;
+      border-radius: 4px;
+      font-size: 11px;
+      font-weight: 500;
+    }
+
+    .tag-type {
+      background: #1B4D3E;
+      color: white;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .tag-category {
+      background: #F3F2EF;
+      color: #5D5D5D;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .tag-default {
+      background: #F7F5F2;
+      color: #6B6B6B;
+    }
+
+    .idea-title {
+      font-family: 'Fraunces', Georgia, serif;
+      font-size: 42px;
+      font-weight: 600;
+      color: #1A1A1A;
+      margin-bottom: 12px;
+      letter-spacing: -0.02em;
+      line-height: 1.1;
+    }
+
+    .idea-oneliner {
+      font-size: 20px;
+      color: #5D5D5D;
+      line-height: 1.5;
+      margin-bottom: 24px;
+    }
+
+    .metrics-row {
+      display: flex;
+      gap: 32px;
+      flex-wrap: wrap;
+    }
+
+    .metric {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .metric-icon {
+      width: 36px;
+      height: 36px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+    }
+
+    .metric-icon.demand { background: #ECFDF5; }
+    .metric-icon.trend { background: #EEF2FF; }
+    .metric-icon.competition { background: #FEF3C7; }
+    .metric-icon.market { background: #FCE7F3; }
+
+    .metric-label {
+      font-size: 11px;
+      color: #8B8B8B;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .metric-value {
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .metric-value.high { color: #059669; }
+    .metric-value.trend { color: #4F46E5; }
+    .metric-value.low { color: #D97706; }
+    .metric-value.market { color: #DB2777; }
+
+    .metric-badge {
+      font-size: 11px;
+      font-weight: 500;
+      color: #059669;
+      background: #ECFDF5;
+      padding: 2px 6px;
+      border-radius: 4px;
+      text-transform: uppercase;
+      margin-left: 4px;
+    }
+
+    /* Tabs */
+    .tabs {
+      background: #FFFFFF;
+      border-bottom: 1px solid #E8E6E1;
+      padding: 0 48px;
+      display: flex;
+      gap: 4px;
+    }
+
+    .tab {
+      padding: 16px 20px;
+      background: transparent;
+      border: none;
+      border-bottom: 2px solid transparent;
+      color: #6B6B6B;
+      font-size: 14px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.15s;
+    }
+
+    .tab.active {
+      color: #1B4D3E;
+      border-bottom-color: #1B4D3E;
+    }
+
+    .tab:hover:not(.active) {
+      color: #3D3D3D;
+    }
+
+    /* Two Column Layout */
+    .content-grid {
+      display: grid;
+      grid-template-columns: 1fr 380px;
+    }
+
+    .left-column {
+      padding: 40px 48px;
+      border-right: 1px solid #E8E6E1;
+    }
+
+    .right-column {
+      padding: 40px 32px;
+      background: #FAFAF8;
+    }
+
+    /* Sections */
+    .section {
+      margin-bottom: 40px;
+    }
+
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 16px;
+    }
+
+    .section-icon {
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+    }
+
+    .section-icon.problem { background: #FEE2E2; }
+    .section-icon.solution { background: #D1FAE5; }
+    .section-icon.target { background: #E0E7FF; }
+    .section-icon.money { background: #FCE7F3; }
+    .section-icon.timing { background: #FEF3C7; }
+
+    .section-title {
+      font-size: 13px;
+      font-weight: 600;
+      color: #8B8B8B;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    .section-text {
+      font-size: 16px;
+      line-height: 1.7;
+      color: #3D3D3D;
+    }
+
+    /* Impact Box */
+    .impact-box {
+      padding: 24px;
+      background: #F0FDF4;
+      border-radius: 12px;
+      border: 1px solid #BBF7D0;
+    }
+
+    .impact-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+
+    .impact-header span {
+      font-size: 20px;
+    }
+
+    .impact-title {
+      font-size: 14px;
+      font-weight: 600;
+      color: #166534;
+    }
+
+    .impact-text {
+      font-size: 15px;
+      line-height: 1.6;
+      color: #166534;
+    }
+
+    /* Deliverable Panel */
+    .deliverable-panel {
+      background: white;
+      border-radius: 12px;
+      border: 1px solid #E8E6E1;
+      overflow: hidden;
+    }
+
+    .panel-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 24px;
+    }
+
+    .panel-title {
+      font-family: 'Fraunces', Georgia, serif;
+      font-size: 20px;
+      font-weight: 600;
+      color: #1A1A1A;
+      margin-bottom: 4px;
+    }
+
+    .panel-desc {
+      font-size: 13px;
+      color: #6B6B6B;
+    }
+
+    .panel-badge {
+      padding: 4px 10px;
+      border-radius: 20px;
+      background: #D1FAE5;
+      color: #059669;
+      font-size: 11px;
+      font-weight: 600;
+    }
+
+    .panel-section {
+      padding: 20px;
+      border-bottom: 1px solid #E8E6E1;
+    }
+
+    .panel-section:last-child {
+      border-bottom: none;
+    }
+
+    .panel-label {
+      font-size: 11px;
+      color: #8B8B8B;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-bottom: 8px;
+    }
+
+    .brand-name {
+      font-family: 'Fraunces', Georgia, serif;
+      font-size: 24px;
+      font-weight: 600;
+      color: #1A1A1A;
+    }
+
+    .brand-tagline {
+      font-size: 14px;
+      color: #5D5D5D;
+      font-style: italic;
+      margin-top: 4px;
+    }
+
+    /* Color Palette */
+    .color-row {
+      display: flex;
+      gap: 8px;
+    }
+
+    .color-swatch {
+      flex: 1;
+    }
+
+    .color-box {
+      width: 100%;
+      height: 48px;
+      border-radius: 8px;
+      margin-bottom: 8px;
+    }
+
+    .color-hex {
+      font-size: 10px;
+      color: #6B6B6B;
+      font-family: 'SF Mono', 'Menlo', monospace;
+    }
+
+    .color-name {
+      font-size: 11px;
+      color: #3D3D3D;
+      font-weight: 500;
+    }
+
+    /* Typography Preview */
+    .type-row {
+      display: flex;
+      gap: 24px;
+    }
+
+    .type-item {
+      flex: 1;
+    }
+
+    .type-label {
+      font-size: 10px;
+      color: #8B8B8B;
+      margin-bottom: 4px;
+    }
+
+    .type-display {
+      font-family: 'Fraunces', Georgia, serif;
+      font-size: 18px;
+      font-weight: 600;
+    }
+
+    .type-body {
+      font-size: 16px;
+      font-weight: 500;
+    }
+
+    /* Brand Voice */
+    .voice-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 12px;
+    }
+
+    .voice-tag {
+      padding: 4px 10px;
+      border-radius: 20px;
+      background: #F3F2EF;
+      color: #5D5D5D;
+      font-size: 12px;
+    }
+
+    .voice-text {
+      font-size: 13px;
+      color: #5D5D5D;
+      line-height: 1.5;
+    }
+
+    /* Panel Actions */
+    .panel-actions {
+      padding: 16px 20px;
+      background: #F7F5F2;
+      border-top: 1px solid #E8E6E1;
+      display: flex;
+      gap: 8px;
+    }
+
+    .action-btn {
+      flex: 1;
+      padding: 10px;
+      border-radius: 8px;
+      font-size: 13px;
+      font-weight: 500;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      transition: all 0.15s;
+    }
+
+    .action-btn.secondary {
+      background: white;
+      border: 1px solid #E8E6E1;
+      color: #3D3D3D;
+    }
+
+    .action-btn.secondary:hover {
+      background: #F7F5F2;
+    }
+
+    .action-btn.primary {
+      background: #1B4D3E;
+      border: none;
+      color: white;
+    }
+
+    .action-btn.primary:hover {
+      background: #153D31;
+    }
+
+    /* Empty State */
+    .empty-state {
+      padding: 48px 24px;
+      text-align: center;
+    }
+
+    .empty-icon {
+      width: 64px;
+      height: 64px;
+      border-radius: 16px;
+      background: #F7F5F2;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 20px;
+      font-size: 24px;
+    }
+
+    .empty-title {
+      font-family: 'Fraunces', Georgia, serif;
+      font-size: 18px;
+      font-weight: 600;
+      color: #1A1A1A;
+      margin-bottom: 8px;
+    }
+
+    .empty-text {
+      font-size: 14px;
+      color: #6B6B6B;
+      max-width: 280px;
+      margin: 0 auto 24px;
+    }
+
+    .generate-btn {
+      padding: 12px 24px;
+      border-radius: 8px;
+      background: #1B4D3E;
+      border: none;
+      color: white;
+      font-size: 14px;
+      font-weight: 500;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.15s;
+    }
+
+    .generate-btn:hover {
+      background: #153D31;
+    }
+
+    /* Competitive Analysis Panel */
+    .competitor-card {
+      padding: 16px;
+      background: #F7F5F2;
+      border-radius: 8px;
+      margin-bottom: 12px;
+    }
+
+    .competitor-card:last-child {
+      margin-bottom: 0;
+    }
+
+    .competitor-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: start;
+      margin-bottom: 8px;
+    }
+
+    .competitor-name {
+      font-weight: 600;
+      color: #1A1A1A;
+    }
+
+    .competitor-price {
+      font-size: 12px;
+      color: #059669;
+      font-weight: 500;
+    }
+
+    .competitor-desc {
+      font-size: 13px;
+      color: #5D5D5D;
+      margin-bottom: 12px;
+    }
+
+    .competitor-grid {
+      display: flex;
+      gap: 16px;
+    }
+
+    .competitor-col {
+      flex: 1;
+    }
+
+    .competitor-label {
+      font-size: 10px;
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+
+    .competitor-label.strength {
+      color: #059669;
+    }
+
+    .competitor-label.weakness {
+      color: #DC2626;
+    }
+
+    .competitor-list {
+      font-size: 12px;
+      color: #5D5D5D;
+    }
+
+    .advantage-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 0;
+      border-bottom: 1px solid #E8E6E1;
+    }
+
+    .advantage-item:last-child {
+      border-bottom: none;
+    }
+
+    .advantage-check {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: #D1FAE5;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 10px;
+      color: #059669;
+    }
+
+    .advantage-text {
+      font-size: 13px;
+      color: #3D3D3D;
+    }
+
+    /* Responsive */
+    @media (max-width: 1200px) {
+      .content-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .left-column {
+        border-right: none;
+        border-bottom: 1px solid #E8E6E1;
+      }
+      
+      .right-column {
+        padding: 40px 48px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .sidebar {
+        display: none;
+      }
+      
+      .idea-header {
+        padding: 24px;
+      }
+      
+      .idea-title {
+        font-size: 28px;
+      }
+      
+      .idea-oneliner {
+        font-size: 16px;
+      }
+      
+      .metrics-row {
+        gap: 16px;
+      }
+      
+      .left-column,
+      .right-column {
+        padding: 24px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="nav">
+    <div class="nav-left">
+      <a href="/ideas" class="nav-back">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+          <path d="M10 12L6 8L10 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        Back to Ideas
+      </a>
+      <div class="nav-divider"></div>
+      <span class="nav-id">idea_051</span>
+    </div>
+    <div class="nav-right">
+      <button class="btn btn-secondary">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+          <path d="M7 1V13M1 7H13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+        Save Idea
+      </button>
+      <button class="btn btn-primary">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+          <path d="M4 7H10M7 4V10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+        Generate All
+      </button>
+    </div>
+  </nav>
+
+  <div class="layout">
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-content">
+        <div class="sidebar-title">Build Resources</div>
+
+        <!-- Popular -->
+        <div class="category">
+          <button class="category-header" onclick="toggleCategory('popular')">
+            <div class="category-left">
+              <span class="category-icon">⭐</span>
+              <span class="category-name">Popular</span>
+            </div>
+            <svg class="category-arrow expanded" id="arrow-popular" width="12" height="12" viewBox="0 0 12 12" fill="none">
+              <path d="M4 2L8 6L4 10" stroke="#8B8B8B" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+          </button>
+          <div class="category-items expanded" id="items-popular">
+            <button class="deliverable-item" onclick="selectDeliverable('ad_creatives', this)">
+              <span class="deliverable-name">Ad Creatives</span>
+              <span class="status-dot generated"></span>
+            </button>
+            <button class="deliverable-item active" onclick="selectDeliverable('brand_package', this)">
+              <span class="deliverable-name">Brand Package</span>
+              <span class="status-dot generated"></span>
+            </button>
+            <button class="deliverable-item" onclick="selectDeliverable('landing_page', this)">
+              <span class="deliverable-name">Landing Page</span>
+              <span class="status-dot pending"></span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Marketing -->
+        <div class="category">
+          <button class="category-header" onclick="toggleCategory('marketing')">
+            <div class="category-left">
+              <span class="category-icon">📣</span>
+              <span class="category-name">Marketing</span>
+              <span class="category-count">8</span>
+            </div>
+            <svg class="category-arrow expanded" id="arrow-marketing" width="12" height="12" viewBox="0 0 12 12" fill="none">
+              <path d="M4 2L8 6L4 10" stroke="#8B8B8B" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+          </button>
+          <div class="category-items expanded" id="items-marketing">
+            <button class="deliverable-item" onclick="selectDeliverable('content_calendar', this)">
+              <span class="deliverable-name">Content Calendar</span>
+              <span class="status-dot pending"></span>
+            </button>
+            <button class="deliverable-item" onclick="selectDeliverable('email_funnel', this)">
+              <span class="deliverable-name">Email Funnel System</span>
+              <span class="status-dot pending"></span>
+            </button>
+            <button class="deliverable-item" onclick="selectDeliverable('email_sequence', this)">
+              <span class="deliverable-name">Email Sequence</span>
+              <span class="status-dot generated"></span>
+            </button>
+            <button class="deliverable-item" onclick="selectDeliverable('lead_magnet', this)">
+              <span class="deliverable-name">Lead Magnet</span>
+              <span class="status-dot pending"></span>
+            </button>
+            <button class="deliverable-item" onclick="selectDeliverable('sales_funnel', this)">
+              <span class="deliverable-name">Sales Funnel</span>
+              <span class="status-dot pending"></span>
+            </button>
+            <button class="deliverable-item" onclick="selectDeliverable('seo_content', this)">
+              <span class="deliverable-name">SEO Content</span>
+              <span class="status-dot pending"></span>
+            </button>
+            <button class="deliverable-item" onclick="selectDeliverable('tweet_landing', this)">
+              <span class="deliverable-name">Tweet-Sized Landing Page</span>
+              <span class="status-dot generated"></span>
+            </button>
+            <button class="deliverable-item" onclick="selectDeliverable('user_personas', this)">
+              <span class="deliverable-name">User Personas</span>
+              <span class="status-dot generated"></span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Product -->
+        <div class="category">
+          <button class="category-header" onclick="toggleCategory('product')">
+            <div class="category-left">
+              <span class="category-icon">🛠</span>
+              <span class="category-name">Product</span>
+              <span class="category-count">3</span>
+            </div>
+            <svg class="category-arrow expanded" id="arrow-product" width="12" height="12" viewBox="0 0 12 12" fill="none">
+              <path d="M4 2L8 6L4 10" stroke="#8B8B8B" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+          </button>
+          <div class="category-items expanded" id="items-product">
+            <button class="deliverable-item" onclick="selectDeliverable('feature_specs', this)">
+              <span class="deliverable-name">Feature Specs</span>
+              <span class="status-dot pending"></span>
+            </button>
+            <button class="deliverable-item" onclick="selectDeliverable('mvp_roadmap', this)">
+              <span class="deliverable-name">MVP Roadmap</span>
+              <span class="status-dot generated"></span>
+            </button>
+            <button class="deliverable-item" onclick="selectDeliverable('prd', this)">
+              <span class="deliverable-name">Product Requirements Doc</span>
+              <span class="status-dot pending"></span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Business -->
+        <div class="category">
+          <button class="category-header" onclick="toggleCategory('business')">
+            <div class="category-left">
+              <span class="category-icon">💼</span>
+              <span class="category-name">Business</span>
+              <span class="category-count">4</span>
+            </div>
+            <svg class="category-arrow expanded" id="arrow-business" width="12" height="12" viewBox="0 0 12 12" fill="none">
+              <path d="M4 2L8 6L4 10" stroke="#8B8B8B" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+          </button>
+          <div class="category-items expanded" id="items-business">
+            <button class="deliverable-item" onclick="selectDeliverable('gtm_calendar', this)">
+              <span class="deliverable-name">GTM Launch Calendar</span>
+              <span class="status-dot pending"></span>
+            </button>
+            <button class="deliverable-item" onclick="selectDeliverable('gtm_strategy', this)">
+              <span class="deliverable-name">GTM Strategy</span>
+              <span class="status-dot generated"></span>
+            </button>
+            <button class="deliverable-item" onclick="selectDeliverable('kpi_dashboard', this)">
+              <span class="deliverable-name">KPI Dashboard</span>
+              <span class="status-dot pending"></span>
+            </button>
+            <button class="deliverable-item" onclick="selectDeliverable('pricing_strategy', this)">
+              <span class="deliverable-name">Pricing Strategy</span>
+              <span class="status-dot generated"></span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Research -->
+        <div class="category">
+          <button class="category-header" onclick="toggleCategory('research')">
+            <div class="category-left">
+              <span class="category-icon">🔍</span>
+              <span class="category-name">Research</span>
+              <span class="category-count">2</span>
+            </div>
+            <svg class="category-arrow expanded" id="arrow-research" width="12" height="12" viewBox="0 0 12 12" fill="none">
+              <path d="M4 2L8 6L4 10" stroke="#8B8B8B" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+          </button>
+          <div class="category-items expanded" id="items-research">
+            <button class="deliverable-item" onclick="selectDeliverable('competitive_analysis', this)">
+              <span class="deliverable-name">Competitive Analysis</span>
+              <span class="status-dot generated"></span>
+            </button>
+            <button class="deliverable-item" onclick="selectDeliverable('interview_guide', this)">
+              <span class="deliverable-name">Customer Interview Guide</span>
+              <span class="status-dot pending"></span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Legend -->
+        <div class="sidebar-legend">
+          <div class="legend-item">
+            <span class="status-dot generated"></span>
+            <span>Generated</span>
+          </div>
+          <div class="legend-item">
+            <span class="status-dot pending"></span>
+            <span>Not generated</span>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main">
+      <!-- Header -->
+      <header class="idea-header">
+        <div class="header-content">
+          <div class="tags-row">
+            <span class="tag tag-type">B2C</span>
+            <span class="tag tag-category">AI Tools</span>
+            <span class="tag tag-default">healthcare</span>
+            <span class="tag tag-default">insurance</span>
+            <span class="tag tag-default">legal</span>
+          </div>
+
+          <h1 class="idea-title">ClaimPilot</h1>
+          <p class="idea-oneliner">AI that fights denied health insurance claims and wins</p>
+
+          <div class="metrics-row">
+            <div class="metric">
+              <div class="metric-icon demand">📈</div>
+              <div>
+                <div class="metric-label">Demand</div>
+                <div class="metric-value high">
+                  89/100
+                  <span class="metric-badge">HIGH</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="metric">
+              <div class="metric-icon trend">🔥</div>
+              <div>
+                <div class="metric-label">Trend</div>
+                <div class="metric-value trend">Rising</div>
+              </div>
+            </div>
+
+            <div class="metric">
+              <div class="metric-icon competition">⚔️</div>
+              <div>
+                <div class="metric-label">Competition</div>
+                <div class="metric-value low">Low</div>
+              </div>
+            </div>
+
+            <div class="metric">
+              <div class="metric-icon market">💰</div>
+              <div>
+                <div class="metric-label">Market Size</div>
+                <div class="metric-value market">$100B+</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <!-- Tabs -->
+      <div class="tabs">
+        <button class="tab active">Overview</button>
+        <button class="tab" id="deliverable-tab">Brand Package</button>
+      </div>
+
+      <!-- Content Grid -->
+      <div class="content-grid">
+        <!-- Left Column -->
+        <div class="left-column">
+          <section class="section">
+            <div class="section-header">
+              <div class="section-icon problem">🎯</div>
+              <h3 class="section-title">Problem</h3>
+            </div>
+            <p class="section-text">Americans lose $50B+ annually to wrongly denied health claims. Appeals require medical knowledge, legal language, and persistence most patients don't have. Insurance companies count on people giving up.</p>
+          </section>
+
+          <section class="section">
+            <div class="section-header">
+              <div class="section-icon solution">💡</div>
+              <h3 class="section-title">Solution</h3>
+            </div>
+            <p class="section-text">Upload your denial letter and medical records. AI analyzes denial reason, finds regulatory violations and medical necessity arguments, generates appeal letter citing relevant case law and payer policies. Escalates to state regulators when appropriate.</p>
+          </section>
+
+          <section class="section">
+            <div class="section-header">
+              <div class="section-icon target">👤</div>
+              <h3 class="section-title">Target Customer</h3>
+            </div>
+            <p class="section-text">Patients with denied claims over $500, employer HR teams, and patient advocacy organizations</p>
+          </section>
+
+          <section class="section">
+            <div class="section-header">
+              <div class="section-icon money">💵</div>
+              <h3 class="section-title">Monetization</h3>
+            </div>
+            <p class="section-text">25% of recovered amount (no win, no fee), or $49/month subscription for unlimited appeals. Enterprise tier for employers at $5/employee/year.</p>
+          </section>
+
+          <section class="section">
+            <div class="section-header">
+              <div class="section-icon timing">⏰</div>
+              <h3 class="section-title">Why Now</h3>
+            </div>
+            <p class="section-text">Price transparency regulations now require hospitals to post prices. This data makes AI negotiation possible for the first time.</p>
+          </section>
+
+          <section class="impact-box">
+            <div class="impact-header">
+              <span>✨</span>
+              <h3 class="impact-title">Impact Potential</h3>
+            </div>
+            <p class="impact-text">Saves families from bankruptcy. Average savings of $3,000-$10,000 per major medical event.</p>
+          </section>
+        </div>
+
+        <!-- Right Column -->
+        <div class="right-column">
+          <div class="panel-header">
+            <div>
+              <h2 class="panel-title" id="panel-title">Brand Package</h2>
+              <p class="panel-desc" id="panel-desc">Complete brand identity with logo, colors, and voice</p>
+            </div>
+            <span class="panel-badge" id="panel-badge">Generated</span>
+          </div>
+
+          <!-- Brand Package Content -->
+          <div class="deliverable-panel" id="content-brand_package">
+            <div class="panel-section">
+              <div class="panel-label">Brand Name</div>
+              <div class="brand-name">ClaimPilot</div>
+              <div class="brand-tagline">"Your denied claim ends here."</div>
+            </div>
+
+            <div class="panel-section">
+              <div class="panel-label">Color Palette</div>
+              <div class="color-row">
+                <div class="color-swatch">
+                  <div class="color-box" style="background: #1B4D3E;"></div>
+                  <div class="color-hex">#1B4D3E</div>
+                  <div class="color-name">Forest Trust</div>
+                </div>
+                <div class="color-swatch">
+                  <div class="color-box" style="background: #2D7A5F;"></div>
+                  <div class="color-hex">#2D7A5F</div>
+                  <div class="color-name">Healing Green</div>
+                </div>
+                <div class="color-swatch">
+                  <div class="color-box" style="background: #E8B931;"></div>
+                  <div class="color-hex">#E8B931</div>
+                  <div class="color-name">Victory Gold</div>
+                </div>
+                <div class="color-swatch">
+                  <div class="color-box" style="background: #F7F5F2;"></div>
+                  <div class="color-hex">#F7F5F2</div>
+                  <div class="color-name">Clean Linen</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="panel-section">
+              <div class="panel-label">Typography</div>
+              <div class="type-row">
+                <div class="type-item">
+                  <div class="type-label">Display</div>
+                  <div class="type-display">Fraunces</div>
+                </div>
+                <div class="type-item">
+                  <div class="type-label">Body</div>
+                  <div class="type-body">Inter</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="panel-section">
+              <div class="panel-label">Brand Voice</div>
+              <div class="voice-tags">
+                <span class="voice-tag">Confident</span>
+                <span class="voice-tag">Empathetic</span>
+                <span class="voice-tag">Expert</span>
+                <span class="voice-tag">Empowering</span>
+              </div>
+              <p class="voice-text">Authoritative yet warm. We're the knowledgeable friend who happens to be a healthcare law expert.</p>
+            </div>
+
+            <div class="panel-actions">
+              <button class="action-btn secondary">
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                  <rect x="2" y="2" width="10" height="10" rx="2" stroke="currentColor" stroke-width="1.5"/>
+                  <path d="M5 5H9M5 7H9M5 9H7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                </svg>
+                Copy
+              </button>
+              <button class="action-btn secondary">
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                  <path d="M7 2V12M7 12L11 8M7 12L3 8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                Export
+              </button>
+              <button class="action-btn primary">
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                  <path d="M2 7C2 7 4 3 7 3C10 3 12 7 12 7C12 7 10 11 7 11C4 11 2 7 2 7Z" stroke="currentColor" stroke-width="1.5"/>
+                  <circle cx="7" cy="7" r="2" stroke="currentColor" stroke-width="1.5"/>
+                </svg>
+                Full View
+              </button>
+            </div>
+          </div>
+
+          <!-- Competitive Analysis Content (hidden by default) -->
+          <div class="deliverable-panel" id="content-competitive_analysis" style="display: none;">
+            <div class="panel-section">
+              <div class="panel-label">Direct Competitors</div>
+              
+              <div class="competitor-card">
+                <div class="competitor-header">
+                  <div class="competitor-name">Claimable</div>
+                  <div class="competitor-price">$79/appeal</div>
+                </div>
+                <div class="competitor-desc">Manual claim appeal assistance with templates</div>
+                <div class="competitor-grid">
+                  <div class="competitor-col">
+                    <div class="competitor-label strength">STRENGTHS</div>
+                    <div class="competitor-list">
+                      • Established brand<br>
+                      • Human review option
+                    </div>
+                  </div>
+                  <div class="competitor-col">
+                    <div class="competitor-label weakness">WEAKNESSES</div>
+                    <div class="competitor-list">
+                      • Slow turnaround<br>
+                      • No AI analysis
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="competitor-card">
+                <div class="competitor-header">
+                  <div class="competitor-name">AppealGenius</div>
+                  <div class="competitor-price">$29/month</div>
+                </div>
+                <div class="competitor-desc">DIY appeal letter templates</div>
+                <div class="competitor-grid">
+                  <div class="competitor-col">
+                    <div class="competitor-label strength">STRENGTHS</div>
+                    <div class="competitor-list">
+                      • Low price point<br>
+                      • Large template library
+                    </div>
+                  </div>
+                  <div class="competitor-col">
+                    <div class="competitor-label weakness">WEAKNESSES</div>
+                    <div class="competitor-list">
+                      • No personalization<br>
+                      • Generic templates
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="panel-section">
+              <div class="panel-label">Our Advantages</div>
+              <div class="advantage-item">
+                <span class="advantage-check">✓</span>
+                <span class="advantage-text">AI trained on 50,000+ successful appeals</span>
+              </div>
+              <div class="advantage-item">
+                <span class="advantage-check">✓</span>
+                <span class="advantage-text">Automatic citation of relevant regulations</span>
+              </div>
+              <div class="advantage-item">
+                <span class="advantage-check">✓</span>
+                <span class="advantage-text">No-win-no-fee pricing removes risk</span>
+              </div>
+              <div class="advantage-item">
+                <span class="advantage-check">✓</span>
+                <span class="advantage-text">Enterprise tier for employers</span>
+              </div>
+            </div>
+
+            <div class="panel-actions">
+              <button class="action-btn secondary">Copy</button>
+              <button class="action-btn primary">Full View</button>
+            </div>
+          </div>
+
+          <!-- Empty State (hidden by default) -->
+          <div class="deliverable-panel" id="content-empty" style="display: none;">
+            <div class="empty-state">
+              <div class="empty-icon">✨</div>
+              <h3 class="empty-title" id="empty-title">Generate Landing Page</h3>
+              <p class="empty-text" id="empty-text">Copy + wireframe blocks for a high-converting landing page</p>
+              <button class="generate-btn">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                  <path d="M8 3V13M3 8H13" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+                Generate Now
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script>
+    // Deliverable data
+    const deliverables = {
+      ad_creatives: { name: 'Ad Creatives', desc: 'High-converting ad copy and creative concepts', generated: true },
+      brand_package: { name: 'Brand Package', desc: 'Complete brand identity with logo, colors, and voice', generated: true },
+      landing_page: { name: 'Landing Page', desc: 'Copy + wireframe blocks', generated: false },
+      content_calendar: { name: 'Content Calendar', desc: '90-day content marketing plan', generated: false },
+      email_funnel: { name: 'Email Funnel System', desc: 'Complete email marketing funnel with sequences, triggers & flow diagrams', generated: false },
+      email_sequence: { name: 'Email Sequence', desc: '5-email nurture sequence', generated: true },
+      lead_magnet: { name: 'Lead Magnet', desc: 'Irresistible lead generation offers', generated: false },
+      sales_funnel: { name: 'Sales Funnel', desc: 'Customer journey optimization strategy', generated: false },
+      seo_content: { name: 'SEO Content', desc: 'Search-optimized content strategy', generated: false },
+      tweet_landing: { name: 'Tweet-Sized Landing Page', desc: 'Ultra-minimal 280-character landing page', generated: true },
+      user_personas: { name: 'User Personas', desc: 'Detailed customer persona cards with motivations', generated: true },
+      feature_specs: { name: 'Feature Specs', desc: 'Detailed feature specifications and user stories', generated: false },
+      mvp_roadmap: { name: 'MVP Roadmap', desc: '90-day development plan with feature prioritization', generated: true },
+      prd: { name: 'Product Requirements Doc', desc: 'Complete PRD with technical specifications', generated: false },
+      gtm_calendar: { name: 'GTM Launch Calendar', desc: '90-day launch timeline with team coordination', generated: false },
+      gtm_strategy: { name: 'GTM Strategy', desc: 'Go-to-market strategy and launch plan', generated: true },
+      kpi_dashboard: { name: 'KPI Dashboard', desc: 'Pre-built metrics tracker with formulas', generated: false },
+      pricing_strategy: { name: 'Pricing Strategy', desc: 'Strategic pricing framework and psychology', generated: true },
+      competitive_analysis: { name: 'Competitive Analysis', desc: 'Deep dive into competitors and market gaps', generated: true },
+      interview_guide: { name: 'Customer Interview Guide', desc: 'Structured interviews for validation and insights', generated: false }
+    };
+
+    function toggleCategory(category) {
+      const items = document.getElementById(`items-${category}`);
+      const arrow = document.getElementById(`arrow-${category}`);
+      
+      items.classList.toggle('expanded');
+      arrow.classList.toggle('expanded');
+    }
+
+    function selectDeliverable(id, element) {
+      // Remove active class from all items
+      document.querySelectorAll('.deliverable-item').forEach(item => {
+        item.classList.remove('active');
+      });
+      
+      // Add active class to clicked item
+      element.classList.add('active');
+      
+      // Get deliverable data
+      const deliverable = deliverables[id];
+      
+      // Update tab
+      document.getElementById('deliverable-tab').textContent = deliverable.name;
+      
+      // Update panel header
+      document.getElementById('panel-title').textContent = deliverable.name;
+      document.getElementById('panel-desc').textContent = deliverable.desc;
+      
+      // Update badge
+      const badge = document.getElementById('panel-badge');
+      if (deliverable.generated) {
+        badge.textContent = 'Generated';
+        badge.style.display = 'block';
+      } else {
+        badge.style.display = 'none';
+      }
+      
+      // Hide all content panels
+      document.querySelectorAll('.deliverable-panel').forEach(panel => {
+        panel.style.display = 'none';
+      });
+      
+      // Show appropriate panel
+      if (id === 'brand_package') {
+        document.getElementById('content-brand_package').style.display = 'block';
+      } else if (id === 'competitive_analysis') {
+        document.getElementById('content-competitive_analysis').style.display = 'block';
+      } else {
+        // Show empty state for other deliverables
+        document.getElementById('content-empty').style.display = 'block';
+        document.getElementById('empty-title').textContent = `Generate ${deliverable.name}`;
+        document.getElementById('empty-text').textContent = deliverable.desc;
+      }
+    }
+  </script>
+</body>
+</html>
