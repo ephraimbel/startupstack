@@ -1,0 +1,890 @@
+# Idea Library Filter System — Specification
+
+## Overview
+
+A powerful, intuitive filter system that helps users quickly narrow down 150+ startup ideas to find the perfect match for their skills, interests, and goals.
+
+---
+
+## Filter Architecture
+
+### Filter Groups
+
+```typescript
+interface FilterState {
+  // Primary Filters (always visible)
+  category: string[];
+  type: string[];
+  demandBand: string[];
+  
+  // Secondary Filters (collapsible)
+  trend: string[];
+  competition: string[];
+  priceRange: string[];
+  
+  // Advanced Filters (modal/drawer)
+  tags: string[];
+  targetAudience: string[];
+  techComplexity: string[];
+  
+  // Search
+  query: string;
+  
+  // Sort
+  sortBy: SortOption;
+  sortOrder: 'asc' | 'desc';
+}
+
+type SortOption = 
+  | 'demand_score'
+  | 'created_at'
+  | 'competition_level'
+  | 'alphabetical'
+  | 'trending';
+```
+
+---
+
+## Filter Definitions
+
+### 1. Category Filter
+
+**Type:** Multi-select pills (horizontal scroll on mobile)
+
+| Value | Label | Icon | Count |
+|-------|-------|------|-------|
+| `ai_tools` | AI Tools | 🤖 | dynamic |
+| `saas` | SaaS | ☁️ | dynamic |
+| `marketing` | Marketing | 📣 | dynamic |
+| `creator` | Creator | 🎨 | dynamic |
+| `productivity` | Productivity | ⚡ | dynamic |
+| `finance` | Finance | 💰 | dynamic |
+| `dev_tools` | Dev Tools | 🛠️ | dynamic |
+| `ecommerce` | E-commerce | 🛒 | dynamic |
+| `healthcare` | Healthcare | 🏥 | dynamic |
+| `real_estate` | Real Estate | 🏠 | dynamic |
+| `legal` | Legal | ⚖️ | dynamic |
+| `hr` | HR & Hiring | 👥 | dynamic |
+
+**Behavior:**
+- Default: All selected (show all)
+- Click to toggle individual categories
+- "All" pill resets to default
+- Show count badge on each pill
+
+---
+
+### 2. Business Type Filter
+
+**Type:** Segmented control (single or multi-select)
+
+| Value | Label | Description |
+|-------|-------|-------------|
+| `b2b` | B2B | Sell to businesses |
+| `b2c` | B2C | Sell to consumers |
+| `b2b2c` | B2B2C | Platform/marketplace |
+
+**Behavior:**
+- Default: All types shown
+- Can select multiple
+- Visual: toggle buttons in a row
+
+---
+
+### 3. Demand Band Filter
+
+**Type:** Checkbox group with visual indicators
+
+| Value | Label | Visual | Description |
+|-------|-------|--------|-------------|
+| `high` | High Demand | 🟢 | Score 70-100 |
+| `medium` | Medium Demand | 🟡 | Score 40-69 |
+| `low` | Low Demand | ⚪ | Score 0-39 |
+
+**Behavior:**
+- Default: All selected
+- Show as colored dots/badges
+- Tooltip shows score range
+
+---
+
+### 4. Trend Filter
+
+**Type:** Checkbox group
+
+| Value | Label | Icon | Description |
+|-------|-------|------|-------------|
+| `rising` | Rising | 📈 | Increasing search interest |
+| `flat` | Stable | ➡️ | Consistent interest |
+| `declining` | Declining | 📉 | Decreasing interest |
+
+---
+
+### 5. Competition Filter
+
+**Type:** Checkbox group
+
+| Value | Label | Visual | Description |
+|-------|-------|--------|-------------|
+| `low` | Low Competition | 🟢 | Blue ocean opportunity |
+| `medium` | Medium Competition | 🟡 | Some players exist |
+| `high` | High Competition | 🔴 | Crowded market |
+
+---
+
+### 6. Price Range Filter (Derived from monetization)
+
+**Type:** Checkbox group
+
+| Value | Label | Monthly Price | Target |
+|-------|-------|---------------|--------|
+| `micro` | Micro SaaS | < $50/mo | Solo founders |
+| `smb` | SMB | $50-200/mo | Small teams |
+| `midmarket` | Mid-Market | $200-1000/mo | Growing companies |
+| `enterprise` | Enterprise | $1000+/mo | Large organizations |
+| `consumer` | Consumer | < $30/mo | Individuals |
+| `transactional` | Pay-per-use | Variable | Usage-based |
+
+---
+
+### 7. Tags Filter (Advanced)
+
+**Type:** Multi-select dropdown with search
+
+```typescript
+const TAG_GROUPS = {
+  technology: [
+    'ai', 'ml', 'automation', 'api', 'no_code', 
+    'voice', 'iot', 'blockchain', 'mobile'
+  ],
+  industry: [
+    'healthcare', 'fintech', 'edtech', 'proptech',
+    'legaltech', 'hrtech', 'martech', 'construction'
+  ],
+  function: [
+    'analytics', 'billing', 'compliance', 'crm',
+    'documentation', 'scheduling', 'communication'
+  ],
+  audience: [
+    'freelancers', 'agencies', 'startups', 'enterprise',
+    'creators', 'developers', 'small_business'
+  ]
+};
+```
+
+---
+
+### 8. Technical Complexity Filter (Derived)
+
+**Type:** Slider or checkbox group
+
+| Value | Label | Indicators |
+|-------|-------|------------|
+| `low` | Low Complexity | No-code friendly, simple integrations |
+| `medium` | Medium Complexity | Standard web stack, some APIs |
+| `high` | High Complexity | ML/AI, complex integrations, compliance |
+
+---
+
+### 9. Target Audience Filter
+
+**Type:** Multi-select chips
+
+| Value | Label |
+|-------|-------|
+| `solo_founders` | Solo Founders |
+| `small_teams` | Small Teams (2-10) |
+| `agencies` | Agencies |
+| `startups` | Startups |
+| `smb` | SMBs |
+| `enterprise` | Enterprise |
+| `consumers` | Consumers |
+| `creators` | Creators |
+| `developers` | Developers |
+
+---
+
+## Search
+
+### Full-Text Search
+
+**Type:** Search input with instant results
+
+```typescript
+interface SearchConfig {
+  fields: [
+    { field: 'title', weight: 10 },
+    { field: 'one_liner', weight: 8 },
+    { field: 'problem', weight: 5 },
+    { field: 'solution', weight: 5 },
+    { field: 'target_customer', weight: 7 },
+    { field: 'tags', weight: 6 },
+    { field: 'keywords', weight: 4 }
+  ];
+  minLength: 2;
+  debounceMs: 300;
+}
+```
+
+**Features:**
+- Instant search as you type
+- Highlight matching terms in results
+- Recent searches (localStorage)
+- Search suggestions based on tags/keywords
+
+---
+
+## Sort Options
+
+**Type:** Dropdown select
+
+| Value | Label | Default Order |
+|-------|-------|---------------|
+| `demand_score` | Highest Demand | desc |
+| `trending` | Trending Now | desc |
+| `competition_asc` | Least Competition | asc |
+| `newest` | Newest First | desc |
+| `alphabetical` | A-Z | asc |
+
+---
+
+## URL Query Parameters
+
+```typescript
+// Example URL structure
+// /ideas?category=ai_tools,saas&type=b2b&demand=high,medium&sort=demand_score
+
+interface QueryParams {
+  // Filters (comma-separated for multi-select)
+  category?: string;      // ai_tools,saas,marketing
+  type?: string;          // b2b,b2c
+  demand?: string;        // high,medium,low
+  trend?: string;         // rising,flat,declining
+  competition?: string;   // low,medium,high
+  price?: string;         // micro,smb,midmarket,enterprise
+  tags?: string;          // ai,automation,analytics
+  audience?: string;      // startups,enterprise
+  complexity?: string;    // low,medium,high
+  
+  // Search
+  q?: string;             // search query
+  
+  // Sort
+  sort?: string;          // demand_score,trending,newest
+  order?: 'asc' | 'desc';
+  
+  // Pagination
+  page?: number;
+  limit?: number;         // default 24
+}
+```
+
+**URL Examples:**
+```
+/ideas
+/ideas?category=ai_tools
+/ideas?category=ai_tools,saas&type=b2b&demand=high
+/ideas?q=invoice&sort=demand_score
+/ideas?competition=low&trend=rising&price=micro
+```
+
+---
+
+## UI Layout Specification
+
+### Desktop Layout (≥1024px)
+
+```
+┌─────────────────────────────────────────────────────────────────────┐
+│ HEADER                                                               │
+├─────────────────────────────────────────────────────────────────────┤
+│                                                                     │
+│  ┌─────────────────────────────────────────────────────────────┐   │
+│  │ 🔍 Search ideas...                              [⚙️ Filters] │   │
+│  └─────────────────────────────────────────────────────────────┘   │
+│                                                                     │
+│  ┌─────────────────────────────────────────────────────────────┐   │
+│  │ [All] [AI Tools] [SaaS] [Marketing] [Creator] [Finance] ... │   │
+│  └─────────────────────────────────────────────────────────────┘   │
+│                                                                     │
+│  ┌──────────────┐  ┌──────────────┐  ┌──────────────────────┐     │
+│  │ Type         │  │ Demand       │  │ Sort: Highest Demand ▼│     │
+│  │ ☑ B2B        │  │ ☑ 🟢 High    │  └──────────────────────┘     │
+│  │ ☑ B2C        │  │ ☑ 🟡 Medium  │                               │
+│  │ ☑ B2B2C      │  │ ☐ ⚪ Low     │  Showing 47 of 150 ideas      │
+│  └──────────────┘  └──────────────┘  [Clear all filters]          │
+│                                                                     │
+│  ┌─────────────────────────────────────────────────────────────┐   │
+│  │ + More Filters: Trend, Competition, Price Range, Tags       │   │
+│  └─────────────────────────────────────────────────────────────┘   │
+│                                                                     │
+├─────────────────────────────────────────────────────────────────────┤
+│                                                                     │
+│  ┌─────────────┐  ┌─────────────┐  ┌─────────────┐                │
+│  │ Idea Card   │  │ Idea Card   │  │ Idea Card   │                │
+│  │             │  │             │  │             │                │
+│  └─────────────┘  └─────────────┘  └─────────────┘                │
+│                                                                     │
+│  ┌─────────────┐  ┌─────────────┐  ┌─────────────┐                │
+│  │ Idea Card   │  │ Idea Card   │  │ Idea Card   │                │
+│  └─────────────┘  └─────────────┘  └─────────────┘                │
+│                                                                     │
+└─────────────────────────────────────────────────────────────────────┘
+```
+
+### Mobile Layout (<768px)
+
+```
+┌─────────────────────────────┐
+│ HEADER                      │
+├─────────────────────────────┤
+│                             │
+│ ┌─────────────────────────┐ │
+│ │ 🔍 Search...    [Filter]│ │
+│ └─────────────────────────┘ │
+│                             │
+│ ← [All] [AI] [SaaS] [Mkt] →│
+│   (horizontal scroll)       │
+│                             │
+│ 47 ideas · [Sort ▼]        │
+│                             │
+│ ┌─────────────────────────┐ │
+│ │ Active filters:         │ │
+│ │ [B2B ×] [High ×] [×All] │ │
+│ └─────────────────────────┘ │
+│                             │
+├─────────────────────────────┤
+│ ┌─────────────────────────┐ │
+│ │ Idea Card               │ │
+│ └─────────────────────────┘ │
+│ ┌─────────────────────────┐ │
+│ │ Idea Card               │ │
+│ └─────────────────────────┘ │
+└─────────────────────────────┘
+
+┌─────────────────────────────┐
+│ FILTER DRAWER (slides up)   │
+├─────────────────────────────┤
+│ Filters              [Done] │
+├─────────────────────────────┤
+│                             │
+│ Business Type               │
+│ ┌───────┬───────┬─────────┐│
+│ │  B2B  │  B2C  │  B2B2C  ││
+│ └───────┴───────┴─────────┘│
+│                             │
+│ Demand Level                │
+│ ☑ 🟢 High Demand           │
+│ ☑ 🟡 Medium Demand         │
+│ ☐ ⚪ Low Demand            │
+│                             │
+│ Trend                       │
+│ ☑ 📈 Rising                │
+│ ☑ ➡️ Stable                │
+│ ☐ 📉 Declining             │
+│                             │
+│ Competition                 │
+│ ☑ Low   ☑ Medium   ☐ High  │
+│                             │
+│ Price Range                 │
+│ ☐ Micro (<$50)             │
+│ ☐ SMB ($50-200)            │
+│ ☐ Mid-Market ($200-1K)     │
+│ ☐ Enterprise ($1K+)        │
+│                             │
+│ + Advanced Filters          │
+│                             │
+├─────────────────────────────┤
+│ [Clear All]  [Show 47 ideas]│
+└─────────────────────────────┘
+```
+
+---
+
+## Component Specifications
+
+### FilterPill
+
+```typescript
+interface FilterPillProps {
+  label: string;
+  value: string;
+  icon?: string | ReactNode;
+  count?: number;
+  isActive: boolean;
+  onClick: () => void;
+}
+```
+
+```css
+/* Base state */
+.filter-pill {
+  padding: 8px 16px;
+  border-radius: 20px;
+  border: 1px solid #E5E7EB;
+  background: #FAFAF9;
+  color: #4B5563;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 150ms ease;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+/* Hover */
+.filter-pill:hover {
+  border-color: #D1D5DB;
+  background: #F6F6F3;
+}
+
+/* Active */
+.filter-pill.active {
+  background: #111827;
+  border-color: #111827;
+  color: #FFFFFF;
+}
+
+/* With count badge */
+.filter-pill .count {
+  margin-left: 6px;
+  padding: 2px 6px;
+  border-radius: 10px;
+  background: rgba(0,0,0,0.1);
+  font-size: 12px;
+}
+```
+
+### FilterCheckbox
+
+```typescript
+interface FilterCheckboxProps {
+  label: string;
+  value: string;
+  checked: boolean;
+  onChange: (checked: boolean) => void;
+  icon?: ReactNode;
+  description?: string;
+}
+```
+
+### FilterDrawer (Mobile)
+
+```typescript
+interface FilterDrawerProps {
+  isOpen: boolean;
+  onClose: () => void;
+  filters: FilterState;
+  onChange: (filters: FilterState) => void;
+  resultCount: number;
+}
+```
+
+### ActiveFilters
+
+```typescript
+interface ActiveFiltersProps {
+  filters: FilterState;
+  onRemove: (filterKey: string, value: string) => void;
+  onClearAll: () => void;
+}
+```
+
+---
+
+## Filter Logic
+
+### Combination Rules
+
+```typescript
+// AND between filter groups, OR within filter groups
+
+function applyFilters(ideas: Idea[], filters: FilterState): Idea[] {
+  return ideas.filter(idea => {
+    // Category: OR within group
+    if (filters.category.length > 0) {
+      if (!filters.category.includes(idea.category)) return false;
+    }
+    
+    // Type: OR within group
+    if (filters.type.length > 0) {
+      if (!filters.type.includes(idea.type)) return false;
+    }
+    
+    // Demand: OR within group
+    if (filters.demandBand.length > 0) {
+      if (!filters.demandBand.includes(idea.demand_band)) return false;
+    }
+    
+    // Trend: OR within group
+    if (filters.trend.length > 0) {
+      if (!filters.trend.includes(idea.trend_label)) return false;
+    }
+    
+    // Competition: OR within group
+    if (filters.competition.length > 0) {
+      if (!filters.competition.includes(idea.competition_level)) return false;
+    }
+    
+    // Tags: OR within group (idea has ANY of selected tags)
+    if (filters.tags.length > 0) {
+      if (!filters.tags.some(tag => idea.tags.includes(tag))) return false;
+    }
+    
+    // Search: fuzzy match across multiple fields
+    if (filters.query) {
+      const searchScore = calculateSearchScore(idea, filters.query);
+      if (searchScore < SEARCH_THRESHOLD) return false;
+    }
+    
+    return true;
+  });
+}
+```
+
+### Sort Implementation
+
+```typescript
+function sortIdeas(ideas: Idea[], sortBy: SortOption, order: 'asc' | 'desc'): Idea[] {
+  const sorted = [...ideas].sort((a, b) => {
+    switch (sortBy) {
+      case 'demand_score':
+        return b.demand_score - a.demand_score;
+      
+      case 'trending':
+        // Combine demand_score with trend bonus
+        const trendBonus = { rising: 20, flat: 0, declining: -10 };
+        const aScore = a.demand_score + trendBonus[a.trend_label];
+        const bScore = b.demand_score + trendBonus[b.trend_label];
+        return bScore - aScore;
+      
+      case 'competition_asc':
+        const compOrder = { low: 1, medium: 2, high: 3 };
+        return compOrder[a.competition_level] - compOrder[b.competition_level];
+      
+      case 'newest':
+        return new Date(b.created_at).getTime() - new Date(a.created_at).getTime();
+      
+      case 'alphabetical':
+        return a.title.localeCompare(b.title);
+      
+      default:
+        return 0;
+    }
+  });
+  
+  return order === 'asc' ? sorted.reverse() : sorted;
+}
+```
+
+---
+
+## State Management
+
+### React Hook
+
+```typescript
+import { useRouter, useSearchParams } from 'next/navigation';
+import { useCallback, useMemo } from 'react';
+
+interface UseFiltersReturn {
+  filters: FilterState;
+  setFilter: (key: keyof FilterState, value: any) => void;
+  toggleFilter: (key: keyof FilterState, value: string) => void;
+  clearFilter: (key: keyof FilterState) => void;
+  clearAllFilters: () => void;
+  activeFilterCount: number;
+  hasActiveFilters: boolean;
+}
+
+export function useFilters(): UseFiltersReturn {
+  const router = useRouter();
+  const searchParams = useSearchParams();
+  
+  const filters = useMemo(() => parseFiltersFromURL(searchParams), [searchParams]);
+  
+  const updateURL = useCallback((newFilters: FilterState) => {
+    const params = filtersToURLParams(newFilters);
+    router.push(`/ideas?${params}`, { scroll: false });
+  }, [router]);
+  
+  const setFilter = useCallback((key: keyof FilterState, value: any) => {
+    updateURL({ ...filters, [key]: value });
+  }, [filters, updateURL]);
+  
+  const toggleFilter = useCallback((key: keyof FilterState, value: string) => {
+    const current = filters[key] as string[];
+    const updated = current.includes(value)
+      ? current.filter(v => v !== value)
+      : [...current, value];
+    updateURL({ ...filters, [key]: updated });
+  }, [filters, updateURL]);
+  
+  const clearFilter = useCallback((key: keyof FilterState) => {
+    updateURL({ ...filters, [key]: [] });
+  }, [filters, updateURL]);
+  
+  const clearAllFilters = useCallback(() => {
+    updateURL(DEFAULT_FILTERS);
+  }, [updateURL]);
+  
+  const activeFilterCount = useMemo(() => {
+    return Object.entries(filters).reduce((count, [key, value]) => {
+      if (key === 'query' && value) return count + 1;
+      if (Array.isArray(value) && value.length > 0) return count + value.length;
+      return count;
+    }, 0);
+  }, [filters]);
+  
+  return {
+    filters,
+    setFilter,
+    toggleFilter,
+    clearFilter,
+    clearAllFilters,
+    activeFilterCount,
+    hasActiveFilters: activeFilterCount > 0,
+  };
+}
+```
+
+---
+
+## API Integration
+
+### Endpoint Specification
+
+```typescript
+// GET /api/ideas
+
+interface IdeasRequest {
+  // Filters
+  category?: string[];
+  type?: string[];
+  demand_band?: string[];
+  trend_label?: string[];
+  competition_level?: string[];
+  tags?: string[];
+  
+  // Search
+  q?: string;
+  
+  // Sort
+  sort_by?: 'demand_score' | 'created_at' | 'competition_level' | 'title';
+  sort_order?: 'asc' | 'desc';
+  
+  // Pagination
+  page?: number;
+  limit?: number;
+}
+
+interface IdeasResponse {
+  ideas: Idea[];
+  pagination: {
+    page: number;
+    limit: number;
+    total: number;
+    total_pages: number;
+  };
+  facets: {
+    categories: { value: string; count: number }[];
+    types: { value: string; count: number }[];
+    demand_bands: { value: string; count: number }[];
+    trends: { value: string; count: number }[];
+    competition_levels: { value: string; count: number }[];
+  };
+}
+```
+
+### Supabase Query
+
+```typescript
+async function fetchIdeas(params: IdeasRequest): Promise<IdeasResponse> {
+  let query = supabase
+    .from('ideas')
+    .select('*', { count: 'exact' });
+  
+  // Apply filters
+  if (params.category?.length) {
+    query = query.in('category', params.category);
+  }
+  
+  if (params.type?.length) {
+    query = query.in('type', params.type);
+  }
+  
+  if (params.demand_band?.length) {
+    query = query.in('demand_band', params.demand_band);
+  }
+  
+  if (params.trend_label?.length) {
+    query = query.in('trend_label', params.trend_label);
+  }
+  
+  if (params.competition_level?.length) {
+    query = query.in('competition_level', params.competition_level);
+  }
+  
+  if (params.tags?.length) {
+    query = query.overlaps('tags', params.tags);
+  }
+  
+  // Full-text search
+  if (params.q) {
+    query = query.textSearch('search_vector', params.q, {
+      type: 'websearch',
+      config: 'english'
+    });
+  }
+  
+  // Sorting
+  const sortBy = params.sort_by || 'demand_score';
+  const sortOrder = params.sort_order || 'desc';
+  query = query.order(sortBy, { ascending: sortOrder === 'asc' });
+  
+  // Pagination
+  const page = params.page || 1;
+  const limit = params.limit || 24;
+  const offset = (page - 1) * limit;
+  query = query.range(offset, offset + limit - 1);
+  
+  const { data, error, count } = await query;
+  
+  if (error) throw error;
+  
+  // Get facet counts (separate queries for accuracy with filters)
+  const facets = await getFacetCounts(params);
+  
+  return {
+    ideas: data,
+    pagination: {
+      page,
+      limit,
+      total: count || 0,
+      total_pages: Math.ceil((count || 0) / limit),
+    },
+    facets,
+  };
+}
+```
+
+---
+
+## Preset Filters (Quick Actions)
+
+```typescript
+const FILTER_PRESETS = {
+  'trending-b2b': {
+    label: '🔥 Trending B2B',
+    filters: {
+      type: ['b2b'],
+      demandBand: ['high'],
+      trend: ['rising'],
+    }
+  },
+  'low-competition': {
+    label: '💎 Hidden Gems',
+    filters: {
+      competition: ['low'],
+      demandBand: ['high', 'medium'],
+    }
+  },
+  'solo-founder': {
+    label: '👤 Solo Founder',
+    filters: {
+      priceRange: ['micro', 'consumer'],
+      complexity: ['low', 'medium'],
+    }
+  },
+  'ai-first': {
+    label: '🤖 AI-Powered',
+    filters: {
+      category: ['ai_tools'],
+      trend: ['rising'],
+    }
+  },
+  'consumer-apps': {
+    label: '📱 Consumer',
+    filters: {
+      type: ['b2c'],
+      priceRange: ['consumer'],
+    }
+  },
+  'enterprise-ready': {
+    label: '🏢 Enterprise',
+    filters: {
+      type: ['b2b'],
+      priceRange: ['enterprise', 'midmarket'],
+    }
+  },
+};
+```
+
+---
+
+## Accessibility
+
+```typescript
+// ARIA labels and keyboard navigation
+
+<div role="group" aria-label="Filter by category">
+  {categories.map(cat => (
+    <button
+      key={cat.value}
+      role="checkbox"
+      aria-checked={isActive(cat.value)}
+      aria-label={`${cat.label}, ${cat.count} ideas`}
+      onClick={() => toggle(cat.value)}
+      onKeyDown={(e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          toggle(cat.value);
+        }
+      }}
+    >
+      {cat.label}
+    </button>
+  ))}
+</div>
+
+// Screen reader announcements
+<div aria-live="polite" aria-atomic="true" className="sr-only">
+  {`Showing ${count} ideas matching your filters`}
+</div>
+```
+
+---
+
+## Performance Optimizations
+
+1. **Debounced search** - 300ms delay before API call
+2. **URL state** - Filters in URL for shareable links, back/forward support
+3. **Facet counts** - Show counts per filter option, update on filter change
+4. **Skeleton loading** - Show placeholders while fetching
+5. **Infinite scroll** - Load more on scroll vs pagination
+6. **Cache** - SWR/React Query with stale-while-revalidate
+7. **Optimistic UI** - Toggle filters instantly, sync in background
+
+---
+
+## File Structure
+
+```
+components/
+├── filters/
+│   ├── FilterBar.tsx           # Main filter container
+│   ├── FilterPill.tsx          # Category pill button
+│   ├── FilterCheckboxGroup.tsx # Checkbox filter group
+│   ├── FilterDrawer.tsx        # Mobile filter drawer
+│   ├── ActiveFilters.tsx       # Active filter chips
+│   ├── SearchInput.tsx         # Search with suggestions
+│   ├── SortSelect.tsx          # Sort dropdown
+│   ├── FilterPresets.tsx       # Quick filter buttons
+│   └── index.ts                # Exports
+├── hooks/
+│   ├── useFilters.ts           # Filter state management
+│   ├── useIdeas.ts             # Data fetching with SWR
+│   └── useDebounce.ts          # Debounce utility
+└── lib/
+    ├── filters.ts              # Filter logic utilities
+    └── constants.ts            # Filter options/presets
+```
