@@ -1,0 +1,2600 @@
+# RepurposeAI — Complete Deliverables Package
+
+## Idea Overview
+
+| Field | Value |
+|-------|-------|
+| **ID** | idea_052 |
+| **Title** | RepurposeAI |
+| **Slug** | repurposeai |
+| **One-liner** | Turn one video into a week of content across every platform |
+| **Category** | Creator Tools |
+| **Type** | B2C |
+| **Demand Score** | 86/100 |
+| **Demand Band** | High |
+| **Trend** | Rising 📈 |
+| **Competition** | Medium |
+
+---
+
+## 1. BRAND PACKAGE
+
+```json
+{
+  "brand_name": "RepurposeAI",
+  "tagline": "One video. Endless content.",
+  "brand_story": "RepurposeAI was born from a creator's frustration. After spending 4 hours filming a YouTube video, the thought of manually cutting clips for TikTok, writing a Twitter thread, designing Instagram carousels, and drafting a newsletter felt exhausting. Most creators know their long-form content is a goldmine—but mining it takes more time than creating it.\n\nWe built RepurposeAI to be the tireless content assistant every creator deserves. Drop in your video, and watch as AI transforms it into a week's worth of platform-perfect content. No more choosing between quality and quantity. No more letting great ideas die on one platform. Your content deserves to work as hard as you do.",
+  "mission": "Empower creators to maximize their content's reach without multiplying their workload.",
+  "vision": "A world where every creator can build an audience across every platform without burning out.",
+  "values": [
+    "Creator-first: We build for the hustle, not against it",
+    "Multiplied impact: One input, infinite outputs",
+    "Platform-native: Each piece feels made for its home",
+    "Time is creative fuel: We give it back to you"
+  ],
+  "logo_direction": {
+    "concept": "Abstract 'play' button that fragments into multiple smaller shapes, representing one piece of content becoming many",
+    "style": "combination",
+    "visual_elements": [
+      "Gradient from violet to coral (energy, creativity)",
+      "Geometric fragmentation effect",
+      "Clean, modern sans-serif wordmark",
+      "Optional: subtle motion lines suggesting transformation"
+    ],
+    "avoid": [
+      "Generic AI/robot imagery",
+      "Recycling symbols (feels cheap)",
+      "Too many platform logos",
+      "Overly complex illustrations"
+    ]
+  },
+  "color_palette": {
+    "primary": {
+      "hex": "#7C3AED",
+      "name": "Creator Violet",
+      "usage": "Primary buttons, key UI elements, logo"
+    },
+    "secondary": {
+      "hex": "#1E1B4B",
+      "name": "Midnight Ink",
+      "usage": "Headlines, dark backgrounds, text"
+    },
+    "accent": {
+      "hex": "#F97316",
+      "name": "Engagement Orange",
+      "usage": "CTAs, highlights, success states, notifications"
+    },
+    "neutral_light": {
+      "hex": "#F8FAFC",
+      "name": "Canvas White"
+    },
+    "neutral_dark": {
+      "hex": "#334155",
+      "name": "Slate"
+    }
+  },
+  "typography": {
+    "display_font": {
+      "name": "Cal Sans",
+      "usage": "Headlines, hero text, marketing",
+      "google_fonts_url": "https://fonts.google.com/specimen/Space+Grotesk"
+    },
+    "body_font": {
+      "name": "Inter",
+      "usage": "Body text, UI, buttons",
+      "google_fonts_url": "https://fonts.google.com/specimen/Inter"
+    }
+  },
+  "brand_voice": {
+    "personality_traits": [
+      "Energetic but not manic",
+      "Knowledgeable creator ally",
+      "Casually confident"
+    ],
+    "tone": "Like a successful creator friend who figured out the growth hack and is genuinely excited to share it with you",
+    "communication_style": "Direct, benefit-focused, uses creator lingo naturally without trying too hard",
+    "do": [
+      "Speak in creator language (algorithm, engagement, hooks)",
+      "Lead with time saved and content multiplied",
+      "Use real platform names (TikTok, Twitter/X, LinkedIn)",
+      "Show before/after transformations"
+    ],
+    "dont": [
+      "Sound like enterprise software",
+      "Overpromise viral results",
+      "Use corporate jargon",
+      "Talk down to creators or explain obvious things"
+    ]
+  },
+  "brand_applications": {
+    "social_media_bio": "Turn 1 video into 20+ pieces of content 🚀 AI-powered repurposing for creators who want to be everywhere without burning out.",
+    "email_signature": "Made with ☕ for creators who'd rather create than copy-paste",
+    "boilerplate": "RepurposeAI helps content creators transform long-form videos into weeks of platform-optimized content automatically. Upload once, publish everywhere."
+  }
+}
+```
+
+---
+
+## 2. LANDING PAGE
+
+```json
+{
+  "page_goal": "Free trial signup",
+  "target_conversion": "Start free trial (no credit card)",
+  "sections": [
+    {
+      "type": "hero",
+      "headline": "One Video. A Week of Content.",
+      "subheadline": "Upload your YouTube video or podcast. Get Twitter threads, LinkedIn posts, Instagram carousels, TikToks, newsletters, and blog posts—all optimized for each platform.",
+      "cta_text": "Try Free — No Card Required",
+      "cta_url": "/signup",
+      "visual_direction": "Split screen: left shows a single YouTube video thumbnail, right shows an explosion of content pieces (tweet, carousel, TikTok, newsletter) radiating out. Animated on scroll.",
+      "social_proof_snippet": "Trusted by 12,000+ creators • 2M+ pieces of content generated"
+    },
+    {
+      "type": "problem",
+      "headline": "You're Sitting on a Content Goldmine",
+      "pain_points": [
+        {
+          "icon": "⏰",
+          "title": "Hours Lost to Reformatting",
+          "description": "That 30-minute video could be 20 pieces of content. But who has 4 hours to cut clips, write captions, and resize graphics?"
+        },
+        {
+          "icon": "📉",
+          "title": "Platforms You're Ignoring",
+          "description": "You know you should be on LinkedIn, TikTok, and Twitter. But you barely have time to post on one platform consistently."
+        },
+        {
+          "icon": "😤",
+          "title": "Hiring Is Expensive",
+          "description": "A good editor costs $2-5K/month. A social media manager another $3K. That's not realistic when you're still growing."
+        }
+      ]
+    },
+    {
+      "type": "solution",
+      "headline": "Your AI Content Team",
+      "description": "RepurposeAI watches your video, understands what makes it valuable, and transforms it into native content for every platform—each piece optimized for how that platform's algorithm works.",
+      "features": [
+        {
+          "icon": "🎬",
+          "title": "Video → Viral Clips",
+          "description": "AI identifies your most engaging moments and cuts them into vertical clips with captions, hooks, and trending sounds."
+        },
+        {
+          "icon": "🐦",
+          "title": "Video → Twitter Threads",
+          "description": "Your key insights become scroll-stopping threads with perfect pacing, hooks, and CTAs."
+        },
+        {
+          "icon": "📸",
+          "title": "Video → Instagram Carousels",
+          "description": "Main points transformed into swipeable carousels with on-brand templates and engaging copy."
+        },
+        {
+          "icon": "💼",
+          "title": "Video → LinkedIn Posts",
+          "description": "Professional angle extracted and formatted for LinkedIn's algorithm and audience."
+        },
+        {
+          "icon": "📧",
+          "title": "Video → Newsletter",
+          "description": "Full episode summary with key takeaways, timestamps, and subscriber-exclusive insights."
+        },
+        {
+          "icon": "📝",
+          "title": "Video → Blog Post",
+          "description": "SEO-optimized article with your transcript cleaned up, structured, and enhanced."
+        }
+      ]
+    },
+    {
+      "type": "how_it_works",
+      "headline": "Three Steps. Twenty Pieces of Content.",
+      "steps": [
+        {
+          "number": 1,
+          "title": "Drop Your Video",
+          "description": "Paste a YouTube link or upload directly. We handle videos up to 3 hours."
+        },
+        {
+          "number": 2,
+          "title": "AI Does the Heavy Lifting",
+          "description": "Our AI analyzes your content, identifies key moments, and generates platform-native content in minutes."
+        },
+        {
+          "number": 3,
+          "title": "Review, Edit, Publish",
+          "description": "Everything lands in your dashboard. Tweak anything, then export or schedule directly."
+        }
+      ]
+    },
+    {
+      "type": "social_proof",
+      "headline": "Creators Are Shipping 10x More Content",
+      "testimonials": [
+        {
+          "quote": "I went from posting once a week to having content scheduled for the entire month. My Twitter grew 340% in 60 days.",
+          "author": "Sarah Chen",
+          "role": "YouTuber",
+          "company": "182K subscribers"
+        },
+        {
+          "quote": "This replaced my $3K/month editor for repurposing. The AI clips are sometimes better than what I'd pick myself.",
+          "author": "Marcus Johnson",
+          "role": "Podcaster",
+          "company": "The Growth Show"
+        },
+        {
+          "quote": "Finally on LinkedIn and it's driving actual business. RepurposeAI makes it effortless to show up everywhere.",
+          "author": "Priya Patel",
+          "role": "Course Creator",
+          "company": "Design Academy"
+        }
+      ],
+      "logos": ["YouTube", "Spotify", "Teachable", "Kajabi", "ConvertKit"],
+      "stats": [
+        { "number": "12,000+", "label": "Active creators" },
+        { "number": "2M+", "label": "Content pieces generated" },
+        { "number": "47 hrs", "label": "Saved per creator monthly" }
+      ]
+    },
+    {
+      "type": "pricing",
+      "headline": "Plans That Scale With Your Content",
+      "plans": [
+        {
+          "name": "Starter",
+          "price": "$29",
+          "period": "/month",
+          "features": [
+            "5 videos per month",
+            "All content types",
+            "Twitter, LinkedIn, Instagram",
+            "TikTok/Shorts clips",
+            "Newsletter drafts",
+            "Blog post conversion"
+          ],
+          "cta": "Start Free Trial",
+          "highlighted": false
+        },
+        {
+          "name": "Creator",
+          "price": "$79",
+          "period": "/month",
+          "features": [
+            "20 videos per month",
+            "Everything in Starter",
+            "Custom brand templates",
+            "Priority processing",
+            "Carousel designer",
+            "Quote graphics generator",
+            "Content calendar view"
+          ],
+          "cta": "Start Free Trial",
+          "highlighted": true
+        },
+        {
+          "name": "Pro",
+          "price": "$199",
+          "period": "/month",
+          "features": [
+            "Unlimited videos",
+            "Everything in Creator",
+            "Team workspaces (3 seats)",
+            "API access",
+            "White-label exports",
+            "Dedicated account manager",
+            "Custom AI training"
+          ],
+          "cta": "Start Free Trial",
+          "highlighted": false
+        }
+      ]
+    },
+    {
+      "type": "faq",
+      "headline": "Questions? We've Got Answers.",
+      "questions": [
+        {
+          "question": "What video formats and lengths do you support?",
+          "answer": "We support YouTube links, MP4, MOV, and most common formats. Videos can be up to 3 hours long. Most creators upload their weekly YouTube videos or podcast episodes."
+        },
+        {
+          "question": "How long does it take to process a video?",
+          "answer": "A 30-minute video typically generates all content types in 5-10 minutes. Longer videos may take up to 20 minutes. You'll get an email when everything is ready."
+        },
+        {
+          "question": "Can I edit the generated content?",
+          "answer": "Absolutely. Everything is editable in our dashboard. Tweak the copy, swap clips, adjust carousel slides—make it yours before publishing."
+        },
+        {
+          "question": "Does it work for any niche?",
+          "answer": "Yes. Our AI adapts to your content style and niche. Whether you're in tech, fitness, business, lifestyle, or education—it learns what makes your content unique."
+        },
+        {
+          "question": "Can I schedule posts directly?",
+          "answer": "We integrate with Buffer, Hootsuite, and Later for scheduling. You can also export everything to post manually or use native platform schedulers."
+        },
+        {
+          "question": "What if I don't like the output?",
+          "answer": "Regenerate any piece with one click. You can also provide feedback to improve future outputs. And there's a 14-day money-back guarantee if it's not for you."
+        }
+      ]
+    },
+    {
+      "type": "final_cta",
+      "headline": "Your Next Video Deserves to Be Everywhere",
+      "subheadline": "Start your free trial today. No credit card required. Cancel anytime.",
+      "cta_text": "Start Repurposing Free"
+    }
+  ],
+  "meta": {
+    "title": "RepurposeAI — Turn One Video Into a Week of Content",
+    "description": "AI-powered content repurposing for creators. Transform YouTube videos and podcasts into Twitter threads, LinkedIn posts, Instagram carousels, TikToks, and newsletters automatically.",
+    "og_image_direction": "Split visual showing video thumbnail transforming into multiple content formats. Bold headline overlay: 'One Video. Endless Content.'"
+  }
+}
+```
+
+---
+
+## 3. AD CREATIVES
+
+```json
+{
+  "meta_ads": [
+    {
+      "format": "single_image",
+      "headline": "Stop Editing. Start Multiplying.",
+      "primary_text": "Your 30-min video = 20 pieces of content. Threads, carousels, TikToks, newsletters—all generated by AI. Free trial 👇",
+      "description": "AI Content Repurposing",
+      "cta": "Try Free",
+      "visual_direction": "Before/after split: exhausted creator at desk with editing software vs. relaxed creator with dashboard showing 20 content pieces ready",
+      "hook_type": "pain_point"
+    },
+    {
+      "format": "single_image",
+      "headline": "One Upload. Every Platform.",
+      "primary_text": "YouTubers are growing 3x faster by being everywhere. RepurposeAI turns your video into Twitter threads, LinkedIn posts, TikToks & more automatically.",
+      "description": "Used by 12,000+ creators",
+      "cta": "Start Free",
+      "visual_direction": "Central YouTube play button with arrows pointing to Twitter, LinkedIn, Instagram, TikTok logos in a radial pattern",
+      "hook_type": "social_proof"
+    },
+    {
+      "format": "video",
+      "headline": "Watch: 1 Video → 20 Posts in 5 Min",
+      "primary_text": "Creators are saving 47 hours/month with RepurposeAI. See how it works in this 60-second demo.",
+      "description": "Free trial, no card needed",
+      "cta": "Learn More",
+      "visual_direction": "Screen recording: upload video → AI processing animation → dashboard reveals threads, carousels, clips. Fast-paced, satisfying.",
+      "hook_type": "curiosity"
+    },
+    {
+      "format": "carousel",
+      "headline": "From This... To All This",
+      "primary_text": "Drop your YouTube video. Get content for every platform. It's that simple.",
+      "description": "Try RepurposeAI free",
+      "cta": "Get Started",
+      "visual_direction": "Slide 1: YouTube video thumbnail. Slides 2-6: Each output type (thread, carousel, TikTok, newsletter, blog) shown as polished examples",
+      "hook_type": "curiosity"
+    }
+  ],
+  "google_ads": [
+    {
+      "headline_1": "Turn Videos Into Content",
+      "headline_2": "AI Repurposing for Creators",
+      "headline_3": "Free Trial - No Card Needed",
+      "description_1": "Upload your YouTube video. Get Twitter threads, Instagram carousels, TikToks, newsletters & more. Used by 12,000+ creators.",
+      "description_2": "Stop spending hours reformatting. RepurposeAI transforms one video into 20+ pieces of platform-native content automatically.",
+      "target_keywords": ["content repurposing tool", "repurpose youtube videos", "video to social media posts"]
+    },
+    {
+      "headline_1": "YouTube to Twitter Threads",
+      "headline_2": "AI Does the Work for You",
+      "headline_3": "Grow on Every Platform",
+      "description_1": "Your best video moments become viral Twitter threads. AI identifies hooks, structures the narrative, adds engagement triggers.",
+      "description_2": "Creators using RepurposeAI grow 3x faster by showing up everywhere. Transform any video into platform-native content.",
+      "target_keywords": ["youtube to twitter thread", "video to thread converter", "content multiplier"]
+    }
+  ],
+  "linkedin_ads": [
+    {
+      "intro_text": "Most creators are leaving 90% of their content's value on the table. Here's how to fix that:",
+      "headline": "Turn One Video Into 20+ LinkedIn Posts, Threads, and Carousels",
+      "visual_direction": "Professional creator at desk with multiple screens showing content dashboard. Clean, aspirational workspace.",
+      "cta": "Start Free Trial"
+    }
+  ],
+  "creative_concepts": [
+    {
+      "name": "The Time Theft",
+      "angle": "Editing steals your creative time. Get it back.",
+      "visual_style": "Dark, dramatic. Clock imagery. Time literally being given back.",
+      "copy_tone": "Urgent, empowering",
+      "target_emotion": "Frustration → Relief"
+    },
+    {
+      "name": "The Multiplication Effect",
+      "angle": "One video × AI = content for weeks",
+      "visual_style": "Bright, energetic. Mathematical/visual multiplication.",
+      "copy_tone": "Excited, possibility-focused",
+      "target_emotion": "Curiosity → Excitement"
+    },
+    {
+      "name": "The Unfair Advantage",
+      "angle": "How top creators are everywhere at once",
+      "visual_style": "Behind-the-scenes, insider knowledge aesthetic",
+      "copy_tone": "Conspiratorial, exclusive",
+      "target_emotion": "FOMO → Action"
+    }
+  ]
+}
+```
+
+---
+
+## 4. CONTENT CALENDAR (90 Days)
+
+```json
+{
+  "strategy_summary": "Position RepurposeAI as the essential tool for serious creators through educational content about content strategy, creator economy trends, and platform-specific tactics. Mix of top-funnel awareness, mid-funnel consideration, and bottom-funnel conversion content.",
+  "content_pillars": [
+    {
+      "pillar": "Content Multiplication Strategy",
+      "description": "Teaching creators how to think about content repurposing strategically",
+      "percentage": 35
+    },
+    {
+      "pillar": "Platform-Specific Tactics",
+      "description": "Deep dives on what works on each platform (Twitter, LinkedIn, TikTok, etc.)",
+      "percentage": 30
+    },
+    {
+      "pillar": "Creator Economy Trends",
+      "description": "Industry insights, algorithm updates, monetization strategies",
+      "percentage": 20
+    },
+    {
+      "pillar": "Product & Customer Stories",
+      "description": "Feature highlights, customer wins, behind-the-scenes",
+      "percentage": 15
+    }
+  ],
+  "channels": [
+    {
+      "channel": "Twitter/X",
+      "frequency": "2x daily",
+      "best_times": "8am EST, 12pm EST",
+      "content_types": ["threads", "single tweets", "quote tweets", "polls"]
+    },
+    {
+      "channel": "LinkedIn",
+      "frequency": "1x daily",
+      "best_times": "7am EST or 5pm EST",
+      "content_types": ["text posts", "carousels", "video clips"]
+    },
+    {
+      "channel": "YouTube",
+      "frequency": "1x weekly",
+      "best_times": "Tuesday 9am EST",
+      "content_types": ["tutorials", "creator interviews", "product updates"]
+    },
+    {
+      "channel": "TikTok/Reels",
+      "frequency": "5x weekly",
+      "best_times": "11am EST, 7pm EST",
+      "content_types": ["quick tips", "before/after", "trending sounds"]
+    },
+    {
+      "channel": "Newsletter",
+      "frequency": "1x weekly",
+      "best_times": "Thursday 10am EST",
+      "content_types": ["curated insights", "platform updates", "creator spotlights"]
+    }
+  ],
+  "calendar": [
+    {
+      "week": 1,
+      "theme": "The Multiplication Mindset",
+      "posts": [
+        {
+          "day": "Monday",
+          "channel": "Twitter",
+          "content_type": "thread",
+          "topic": "Why most creators leave 90% of their content value on the table",
+          "hook": "I analyzed 50 top creators. Only 3 repurpose effectively. Here's what they do differently:",
+          "cta": "Follow for more content strategy",
+          "hashtags": ["ContentStrategy", "CreatorEconomy"],
+          "pillar": "Content Multiplication Strategy"
+        },
+        {
+          "day": "Monday",
+          "channel": "LinkedIn",
+          "content_type": "text post",
+          "topic": "The ROI of content repurposing",
+          "hook": "I spent 4 hours on a YouTube video. Then I spent 30 minutes turning it into 20 pieces of content. The 30 minutes drove 3x more traffic.",
+          "cta": "What's your repurposing workflow?",
+          "hashtags": [],
+          "pillar": "Content Multiplication Strategy"
+        },
+        {
+          "day": "Tuesday",
+          "channel": "YouTube",
+          "content_type": "tutorial",
+          "topic": "How to turn 1 video into 20 pieces of content (full workflow)",
+          "hook": "Step-by-step breakdown with templates",
+          "cta": "Try RepurposeAI free",
+          "hashtags": [],
+          "pillar": "Content Multiplication Strategy"
+        },
+        {
+          "day": "Wednesday",
+          "channel": "TikTok",
+          "content_type": "quick tip",
+          "topic": "The 5-minute content multiplication hack",
+          "hook": "POV: You just discovered how top creators are everywhere",
+          "cta": "Link in bio",
+          "hashtags": ["ContentCreator", "YouTuber", "CreatorTips"],
+          "pillar": "Content Multiplication Strategy"
+        },
+        {
+          "day": "Thursday",
+          "channel": "Newsletter",
+          "content_type": "curated insights",
+          "topic": "The Content Multiplication Playbook",
+          "hook": "This week: Why repurposing beats creating, platform-by-platform breakdown, tools we recommend",
+          "cta": "Try RepurposeAI",
+          "hashtags": [],
+          "pillar": "Content Multiplication Strategy"
+        },
+        {
+          "day": "Friday",
+          "channel": "Twitter",
+          "content_type": "thread",
+          "topic": "Platform-native content: what actually works on Twitter vs LinkedIn vs TikTok",
+          "hook": "Stop cross-posting. Start native-posting. Here's the difference:",
+          "cta": "Save this thread",
+          "hashtags": ["ContentTips", "SocialMediaMarketing"],
+          "pillar": "Platform-Specific Tactics"
+        }
+      ]
+    },
+    {
+      "week": 2,
+      "theme": "Twitter/X Mastery",
+      "posts": [
+        {
+          "day": "Monday",
+          "channel": "Twitter",
+          "content_type": "thread",
+          "topic": "The anatomy of a viral Twitter thread (breakdown of 10 examples)",
+          "hook": "I studied 100 threads with 10K+ likes. They all follow this formula:",
+          "cta": "RT if useful",
+          "hashtags": ["TwitterTips", "ThreadGame"],
+          "pillar": "Platform-Specific Tactics"
+        },
+        {
+          "day": "Tuesday",
+          "channel": "LinkedIn",
+          "content_type": "carousel",
+          "topic": "How to turn your YouTube video into a Twitter thread",
+          "hook": "5 steps to transform video content for Twitter",
+          "cta": "Save for later",
+          "hashtags": [],
+          "pillar": "Platform-Specific Tactics"
+        },
+        {
+          "day": "Wednesday",
+          "channel": "TikTok",
+          "content_type": "before/after",
+          "topic": "YouTube video → Thread transformation",
+          "hook": "Watch this video become a viral thread in 30 seconds",
+          "cta": "Link in bio to try",
+          "hashtags": ["ContentCreator", "TwitterThread"],
+          "pillar": "Product & Customer Stories"
+        }
+      ]
+    },
+    {
+      "week": 3,
+      "theme": "LinkedIn for Creators",
+      "posts": []
+    },
+    {
+      "week": 4,
+      "theme": "Short-Form Video Explosion",
+      "posts": []
+    }
+  ],
+  "content_templates": [
+    {
+      "type": "thread",
+      "structure": "Hook → Problem → Solution steps (5-7) → Results/Proof → CTA",
+      "example": "Hook: 'Most creators work 10x harder than they need to.' Problem: 'Here's why...' Steps: Numbered breakdown. Results: Stats/testimonials. CTA: 'Follow for more'"
+    },
+    {
+      "type": "carousel",
+      "structure": "Cover (hook) → Problem → 5-7 solution slides → Summary → CTA",
+      "example": "Cover: Bold statement. Slides: One key point each with visual. Summary: Quick recap. CTA: Save/Follow"
+    },
+    {
+      "type": "TikTok",
+      "structure": "Hook (0-3 sec) → Value (10-30 sec) → CTA (3 sec)",
+      "example": "Hook: 'POV: You just saved 10 hours this week.' Value: Quick demo/tip. CTA: 'Link in bio'"
+    }
+  ],
+  "kpis": [
+    {
+      "metric": "Twitter impressions",
+      "target": "500K/month by month 3",
+      "measurement": "Twitter Analytics"
+    },
+    {
+      "metric": "Newsletter subscribers",
+      "target": "5,000 by month 3",
+      "measurement": "ConvertKit"
+    },
+    {
+      "metric": "Content → Trial conversion",
+      "target": "2% of engaged audience",
+      "measurement": "UTM tracking"
+    }
+  ]
+}
+```
+
+---
+
+## 5. EMAIL FUNNEL SYSTEM
+
+```json
+{
+  "funnel_overview": "Three core sequences: Welcome/Onboarding, Trial Conversion, and Win-back. Plus behavioral triggers for engagement.",
+  "segments": [
+    {
+      "name": "Free Trial - Active",
+      "criteria": "Started trial, used product in last 7 days",
+      "size_estimate": "60% of trials"
+    },
+    {
+      "name": "Free Trial - Inactive",
+      "criteria": "Started trial, no usage in 7+ days",
+      "size_estimate": "40% of trials"
+    },
+    {
+      "name": "Converted - Starter",
+      "criteria": "Paying $29/mo plan",
+      "size_estimate": "50% of conversions"
+    },
+    {
+      "name": "Converted - Creator/Pro",
+      "criteria": "Paying $79+ plan",
+      "size_estimate": "50% of conversions"
+    },
+    {
+      "name": "Churned",
+      "criteria": "Canceled in last 90 days",
+      "size_estimate": "Varies"
+    }
+  ],
+  "sequences": [
+    {
+      "name": "Welcome Sequence",
+      "trigger": "Free trial signup",
+      "goal": "Get user to upload first video and see value within 24 hours",
+      "emails": [
+        {
+          "day": 0,
+          "subject": "Your content is about to multiply 🚀",
+          "preview": "Let's turn your first video into a week of content",
+          "purpose": "Welcome + immediate action",
+          "key_content": "Quick win: upload your first video in the next 10 minutes. Here's exactly what to do.",
+          "cta": "Upload Your First Video",
+          "send_time": "Immediate"
+        },
+        {
+          "day": 1,
+          "subject": "Did you see what we made for you?",
+          "preview": "Your content is ready (if you uploaded) or waiting (if you haven't)",
+          "purpose": "Check progress, re-engage if needed",
+          "key_content": "Branch: If uploaded → show them results preview. If not → remove friction, offer help.",
+          "cta": "View Your Content / Upload Now",
+          "send_time": "Same time as signup"
+        },
+        {
+          "day": 3,
+          "subject": "The creators who grow fastest do this",
+          "preview": "One pattern we see in our top users",
+          "purpose": "Best practices education",
+          "key_content": "Most successful users repurpose their latest video within 24 hours of posting. Here's the workflow.",
+          "cta": "Try the workflow",
+          "send_time": "10am user timezone"
+        },
+        {
+          "day": 5,
+          "subject": "Your Twitter thread is waiting",
+          "preview": "We found 3 viral-worthy moments in your video",
+          "purpose": "Feature highlight + value demonstration",
+          "key_content": "Deep dive on Twitter thread feature. Show example output from their content or similar niche.",
+          "cta": "See Your Threads",
+          "send_time": "10am user timezone"
+        },
+        {
+          "day": 7,
+          "subject": "7 days in: here's what you've created",
+          "preview": "Your RepurposeAI stats so far",
+          "purpose": "Progress summary + upgrade nudge",
+          "key_content": "Stats: X pieces of content created, Y hours saved. Compare to plan limits. Soft upgrade mention.",
+          "cta": "View Full Dashboard",
+          "send_time": "10am user timezone"
+        }
+      ],
+      "exit_conditions": ["Unsubscribe", "Converts to paid", "Trial expires"],
+      "success_metric": "First video uploaded within 24 hours (target: 60%)"
+    },
+    {
+      "name": "Trial Conversion Sequence",
+      "trigger": "Day 8 of trial (if not converted)",
+      "goal": "Convert free trial to paid before expiration",
+      "emails": [
+        {
+          "day": 8,
+          "subject": "Your trial ends in 6 days",
+          "preview": "Don't lose your content setup",
+          "purpose": "Urgency + value recap",
+          "key_content": "Recap what they've created. What they'd lose. Simple path to continue.",
+          "cta": "Keep Creating →",
+          "send_time": "10am"
+        },
+        {
+          "day": 10,
+          "subject": "Quick question about RepurposeAI",
+          "preview": "Is something holding you back?",
+          "purpose": "Objection handling",
+          "key_content": "Common concerns addressed: price justification, feature questions, comparison to alternatives.",
+          "cta": "Reply to this email",
+          "send_time": "2pm"
+        },
+        {
+          "day": 12,
+          "subject": "What [Creator Name] did with RepurposeAI",
+          "preview": "From 1 video/week to everywhere in 30 days",
+          "purpose": "Social proof",
+          "key_content": "Customer success story relevant to their niche if possible. Specific results.",
+          "cta": "Get Similar Results",
+          "send_time": "10am"
+        },
+        {
+          "day": 13,
+          "subject": "Last day: 20% off your first 3 months",
+          "preview": "This offer expires at midnight",
+          "purpose": "Final conversion push",
+          "key_content": "Limited-time discount. Everything they'll get. Simple checkout.",
+          "cta": "Claim 20% Off",
+          "send_time": "10am + 6pm reminder"
+        }
+      ],
+      "exit_conditions": ["Converts to paid", "Trial expires"],
+      "success_metric": "Trial to paid conversion (target: 15%)"
+    },
+    {
+      "name": "Win-back Sequence",
+      "trigger": "Canceled subscription",
+      "goal": "Re-engage churned users within 30 days",
+      "emails": [
+        {
+          "day": 3,
+          "subject": "We're sorry to see you go",
+          "preview": "Quick feedback request (30 seconds)",
+          "purpose": "Feedback collection",
+          "key_content": "Simple survey: why did you cancel? What would bring you back?",
+          "cta": "Share Feedback (30 sec)",
+          "send_time": "10am"
+        },
+        {
+          "day": 14,
+          "subject": "Things have changed at RepurposeAI",
+          "preview": "New features you might have missed",
+          "purpose": "Re-engage with new value",
+          "key_content": "Highlight 2-3 new features or improvements since they left.",
+          "cta": "See What's New",
+          "send_time": "10am"
+        },
+        {
+          "day": 30,
+          "subject": "Come back: 40% off for 2 months",
+          "preview": "We want to earn you back",
+          "purpose": "Win-back offer",
+          "key_content": "Significant discount to restart. Address likely churn reason.",
+          "cta": "Restart at 40% Off",
+          "send_time": "10am"
+        }
+      ],
+      "exit_conditions": ["Resubscribes", "Unsubscribes", "90 days passed"],
+      "success_metric": "Win-back rate (target: 8%)"
+    }
+  ],
+  "automations": [
+    {
+      "name": "First Video Celebration",
+      "trigger_event": "First video processed",
+      "action": "Send congratulations email with output preview",
+      "delay": "5 minutes",
+      "conditions": ["Within first 7 days of trial"]
+    },
+    {
+      "name": "Usage Milestone",
+      "trigger_event": "5 videos processed",
+      "action": "Send milestone email with upgrade CTA",
+      "delay": "1 hour",
+      "conditions": ["On free trial or Starter plan"]
+    },
+    {
+      "name": "Inactivity Alert",
+      "trigger_event": "No login for 5 days",
+      "action": "Send re-engagement email with new content ideas",
+      "delay": "Immediate",
+      "conditions": ["Active trial or subscription"]
+    },
+    {
+      "name": "Plan Limit Warning",
+      "trigger_event": "80% of video limit used",
+      "action": "Send upgrade suggestion email",
+      "delay": "Immediate",
+      "conditions": ["On limited plan (Starter or Creator)"]
+    }
+  ],
+  "flow_diagram": {
+    "nodes": [
+      { "id": "signup", "type": "trigger", "label": "Free Trial Signup" },
+      { "id": "welcome_1", "type": "email", "label": "Welcome Email" },
+      { "id": "check_upload", "type": "condition", "label": "Uploaded video?" },
+      { "id": "welcome_2a", "type": "email", "label": "Results Preview" },
+      { "id": "welcome_2b", "type": "email", "label": "Re-engagement" },
+      { "id": "welcome_3", "type": "email", "label": "Best Practices" },
+      { "id": "check_convert", "type": "condition", "label": "Converted?" },
+      { "id": "conversion_seq", "type": "action", "label": "Start Conversion Sequence" },
+      { "id": "customer_seq", "type": "action", "label": "Start Customer Sequence" }
+    ],
+    "edges": [
+      { "from": "signup", "to": "welcome_1", "label": "immediate" },
+      { "from": "welcome_1", "to": "check_upload", "label": "day 1" },
+      { "from": "check_upload", "to": "welcome_2a", "label": "yes" },
+      { "from": "check_upload", "to": "welcome_2b", "label": "no" },
+      { "from": "welcome_2a", "to": "welcome_3", "label": "day 3" },
+      { "from": "welcome_2b", "to": "welcome_3", "label": "day 3" },
+      { "from": "welcome_3", "to": "check_convert", "label": "day 8" },
+      { "from": "check_convert", "to": "customer_seq", "label": "yes" },
+      { "from": "check_convert", "to": "conversion_seq", "label": "no" }
+    ]
+  },
+  "tech_stack_recommendations": [
+    "ConvertKit (creator-focused, good automation)",
+    "Customer.io (advanced behavioral triggers)",
+    "Loops (modern, developer-friendly alternative)"
+  ]
+}
+```
+
+---
+
+## 6. EMAIL SEQUENCE (5-Email Nurture)
+
+```json
+{
+  "sequence_name": "Content Multiplication Masterclass",
+  "goal": "Nurture leads from content/ads to free trial signup",
+  "target_segment": "Creators who downloaded lead magnet or engaged with content but haven't signed up",
+  "emails": [
+    {
+      "email_number": 1,
+      "send_day": 0,
+      "subject_line": "The math behind 10x content output",
+      "preview_text": "Why top creators seem to be everywhere",
+      "from_name": "Sarah from RepurposeAI",
+      "purpose": "Establish problem and hint at solution",
+      "body": {
+        "opening_hook": "I used to spend 6 hours turning one YouTube video into social content. The clips, the threads, the carousels—it felt like a second full-time job.",
+        "main_content": "Then I did the math:\n\n• 1 YouTube video = 4 hours to create\n• Manual repurposing = 6 hours additional\n• Total: 10 hours for maybe 5 platforms\n\nMeanwhile, creators with bigger teams were everywhere. Same video, 20+ pieces of content, all native to each platform.\n\nThe difference wasn't talent. It was systems.",
+        "value_proposition": "Over the next few emails, I'm going to share the exact system that lets solo creators compete with teams of 10. No BS, just the framework that's working right now.",
+        "social_proof": "This is the same approach used by creators like [names] who've grown from 10K to 100K+ followers in months.",
+        "cta_section": "Tomorrow, I'll break down the exact 'Content Multiplication Framework' step by step.",
+        "ps_line": "P.S. If you're curious about automating this entire process, reply and I'll send you early access to something we're building."
+      },
+      "cta": {
+        "text": "Reply 'SYSTEM' for early access",
+        "url": null,
+        "style": "text_link"
+      },
+      "a_b_test_variants": [
+        { "element": "subject", "variant_a": "The math behind 10x content output", "variant_b": "How creators are everywhere at once" }
+      ]
+    },
+    {
+      "email_number": 2,
+      "send_day": 2,
+      "subject_line": "The Content Multiplication Framework",
+      "preview_text": "Step-by-step breakdown inside",
+      "from_name": "Sarah from RepurposeAI",
+      "purpose": "Deliver core educational value",
+      "body": {
+        "opening_hook": "As promised, here's the framework that changes everything.",
+        "main_content": "**The Content Multiplication Framework:**\n\n**Layer 1: The Source**\nStart with ONE piece of long-form content. YouTube video, podcast, livestream. This is your content asset.\n\n**Layer 2: The Extraction**\nPull out:\n- 3-5 standalone insights (→ tweets, LinkedIn posts)\n- 2-3 story moments (→ short-form video clips)\n- 1 structured breakdown (→ thread, carousel)\n- Key quotes (→ quote graphics)\n- Full narrative (→ newsletter, blog)\n\n**Layer 3: Platform Optimization**\nEach extraction gets reformatted NATIVE to its platform:\n- Twitter: Hook-driven, punchy, use line breaks\n- LinkedIn: Professional angle, longer form\n- TikTok: Fast hook, visual, trending sounds\n- Instagram: Visual-first, carousel format\n\n**Layer 4: The Schedule**\nDrip content throughout the week. Your one video feeds 7 days of content.",
+        "value_proposition": "This framework turns 1 video into 20+ pieces of content. But manually, it still takes 3-4 hours.\n\nThat's where the magic happens...",
+        "social_proof": "",
+        "cta_section": "In the next email, I'll show you how to compress those 3-4 hours into 10 minutes.",
+        "ps_line": "P.S. Save this email. Seriously. It's the foundation of everything that comes next."
+      },
+      "cta": {
+        "text": null,
+        "url": null,
+        "style": "text_link"
+      },
+      "a_b_test_variants": []
+    },
+    {
+      "email_number": 3,
+      "send_day": 4,
+      "subject_line": "10 minutes vs 4 hours",
+      "preview_text": "The automation that changes everything",
+      "from_name": "Sarah from RepurposeAI",
+      "purpose": "Introduce product as solution",
+      "body": {
+        "opening_hook": "Remember that 4-hour repurposing session I mentioned?\n\nWhat if I told you AI can do 90% of it in 10 minutes?",
+        "main_content": "Here's what's now possible:\n\n1. You upload your YouTube video (or paste a link)\n2. AI watches it, transcribes it, understands it\n3. In ~10 minutes, you get:\n   - 3-5 Twitter threads (with hooks and CTAs)\n   - 5 LinkedIn posts (professional angle)\n   - 10+ TikTok/Reels clips (with captions)\n   - Instagram carousels (designed and written)\n   - Newsletter draft (with key takeaways)\n   - Blog post (SEO-optimized)\n\nEach piece is NATIVE to its platform. Not just cross-posted—actually optimized for how that algorithm works.",
+        "value_proposition": "This is exactly what we built RepurposeAI to do.\n\nNot a half-baked tool that needs constant editing. A genuine content team replacement that understands creator workflows.",
+        "social_proof": "12,000+ creators are using it right now. Average time saved: 47 hours/month.",
+        "cta_section": "Want to see it in action?",
+        "ps_line": ""
+      },
+      "cta": {
+        "text": "Try RepurposeAI Free (no card needed)",
+        "url": "https://repurpose.ai/trial",
+        "style": "button"
+      },
+      "a_b_test_variants": [
+        { "element": "subject", "variant_a": "10 minutes vs 4 hours", "variant_b": "I automated my entire content workflow" }
+      ]
+    },
+    {
+      "email_number": 4,
+      "send_day": 6,
+      "subject_line": "From 2K to 47K followers in 90 days",
+      "preview_text": "Real story from a RepurposeAI creator",
+      "from_name": "Sarah from RepurposeAI",
+      "purpose": "Social proof and objection handling",
+      "body": {
+        "opening_hook": "Meet Marcus.\n\n90 days ago, he had 2,000 Twitter followers and posted maybe twice a week.",
+        "main_content": "His problem? Same as yours probably.\n\nHe was making great YouTube content but couldn't find time to show up anywhere else. His videos got decent views, but his audience wasn't growing across platforms.\n\nThen he tried RepurposeAI.\n\n**Week 1:** Uploaded his first video. Got 12 pieces of content. Posted consistently for the first time ever.\n\n**Week 4:** Twitter engagement up 340%. LinkedIn posts getting 10K+ impressions.\n\n**Week 12:** 47,000 Twitter followers. Newsletter at 8,500 subscribers. First sponsorship deal closed.\n\nHis quote: 'I didn't get better at content. I just finally showed up everywhere.'",
+        "value_proposition": "The best part? Marcus is still making the same 1 video per week he was before. He just stopped leaving 90% of its value on the table.",
+        "social_proof": "",
+        "cta_section": "Your content deserves to be everywhere too.",
+        "ps_line": "P.S. Marcus is on the $79/month Creator plan. It pays for itself with one sponsorship inquiry."
+      },
+      "cta": {
+        "text": "Start Your Free Trial",
+        "url": "https://repurpose.ai/trial",
+        "style": "button"
+      },
+      "a_b_test_variants": []
+    },
+    {
+      "email_number": 5,
+      "send_day": 8,
+      "subject_line": "Last chance: 20% off + bonus templates",
+      "preview_text": "This offer expires tonight",
+      "from_name": "Sarah from RepurposeAI",
+      "purpose": "Final conversion push with urgency",
+      "body": {
+        "opening_hook": "I don't usually send 'deadline' emails.\n\nBut I genuinely think you're leaving growth on the table, and I want to remove every excuse.",
+        "main_content": "**Here's what I've put together for you:**\n\n✅ 20% off your first 3 months (any plan)\n✅ Bonus: 50 viral thread templates (normally $49)\n✅ Bonus: Content calendar spreadsheet (the one our team uses)\n✅ 14-day money-back guarantee (no questions)\n\nThis offer expires at midnight tonight.",
+        "value_proposition": "If RepurposeAI saves you even 5 hours this month (most users save 40+), it's paid for itself 10x over.\n\nAnd if it's not for you, you get every penny back.",
+        "social_proof": "Join 12,000+ creators who've already made the switch.",
+        "cta_section": "Use code MULTIPLY20 at checkout.",
+        "ps_line": "P.S. Reply to this email if you have ANY questions. I read and respond to every one."
+      },
+      "cta": {
+        "text": "Claim 20% Off Before Midnight",
+        "url": "https://repurpose.ai/trial?code=MULTIPLY20",
+        "style": "button"
+      },
+      "a_b_test_variants": [
+        { "element": "subject", "variant_a": "Last chance: 20% off + bonus templates", "variant_b": "Your discount expires at midnight" }
+      ]
+    }
+  ],
+  "sequence_metrics": {
+    "target_open_rate": "45%+",
+    "target_click_rate": "8%+",
+    "target_conversion_rate": "5% of sequence completers start trial"
+  }
+}
+```
+
+---
+
+## 7. LEAD MAGNET
+
+```json
+{
+  "lead_magnet_options": [
+    {
+      "type": "template",
+      "title": "The Content Multiplication Template Pack",
+      "hook": "50 plug-and-play templates to turn any video into viral content",
+      "description": "Notion + Google Docs templates for Twitter threads, LinkedIn posts, Instagram carousels, newsletter formats, and more. Just fill in the blanks.",
+      "perceived_value": "$97",
+      "time_to_consume": "Use immediately, reference ongoing",
+      "time_to_create": "4-6 hours",
+      "outline": [
+        "10 Twitter thread templates (different formats)",
+        "10 LinkedIn post templates",
+        "10 Instagram carousel templates",
+        "5 TikTok script templates",
+        "5 Newsletter templates",
+        "5 Quote graphic templates",
+        "Bonus: Content extraction worksheet",
+        "Bonus: Weekly content calendar template"
+      ],
+      "landing_page_headline": "50 Templates to Turn 1 Video Into 20 Posts",
+      "opt_in_cta": "Get Free Templates",
+      "follow_up_sequence_hook": "You have the templates. Now let me show you how to automate the entire process..."
+    },
+    {
+      "type": "guide",
+      "title": "The Content Multiplication Playbook",
+      "hook": "The complete system for being everywhere without burning out",
+      "description": "25-page PDF guide covering the strategy, tactics, and workflows used by top creators to dominate every platform from one piece of content.",
+      "perceived_value": "$49",
+      "time_to_consume": "30 minutes",
+      "time_to_create": "8-10 hours",
+      "outline": [
+        "Chapter 1: The multiplication mindset",
+        "Chapter 2: Choosing your anchor content",
+        "Chapter 3: The extraction framework",
+        "Chapter 4: Platform-native optimization",
+        "Chapter 5: Scheduling for maximum impact",
+        "Chapter 6: Tools and automation",
+        "Chapter 7: Case studies"
+      ],
+      "landing_page_headline": "The Complete Guide to Content Multiplication",
+      "opt_in_cta": "Download Free Playbook",
+      "follow_up_sequence_hook": "Now that you understand the strategy, let me show you how to execute it in 10 minutes instead of 10 hours..."
+    },
+    {
+      "type": "calculator",
+      "title": "Content ROI Calculator",
+      "hook": "See exactly how much time and money you're leaving on the table",
+      "description": "Interactive calculator that shows the value of content repurposing based on your posting frequency, hourly rate, and growth goals.",
+      "perceived_value": "$29",
+      "time_to_consume": "3 minutes",
+      "time_to_create": "10-15 hours (development)",
+      "outline": [
+        "Input: Current posting frequency per platform",
+        "Input: Time spent on content creation weekly",
+        "Input: Your hourly rate / value",
+        "Input: Growth goals",
+        "Output: Time savings with repurposing",
+        "Output: Potential audience growth",
+        "Output: ROI of automation tools"
+      ],
+      "landing_page_headline": "How Much Is Your Content Really Worth?",
+      "opt_in_cta": "Calculate My Content ROI",
+      "follow_up_sequence_hook": "Your results showed you're leaving $X,XXX on the table. Here's how to capture it..."
+    },
+    {
+      "type": "swipe_file",
+      "title": "100 Viral Hooks Swipe File",
+      "hook": "Proven opening lines for threads, carousels, and short-form videos",
+      "description": "Curated collection of the highest-performing hooks from top creators, organized by type and emotion triggered.",
+      "perceived_value": "$67",
+      "time_to_consume": "Browse as needed",
+      "time_to_create": "6-8 hours",
+      "outline": [
+        "25 Curiosity hooks",
+        "25 Pain point hooks",
+        "25 Contrarian hooks",
+        "25 Story hooks",
+        "Analysis: Why each hook works",
+        "Fill-in-the-blank versions"
+      ],
+      "landing_page_headline": "100 Hooks That Stop the Scroll",
+      "opt_in_cta": "Get the Swipe File",
+      "follow_up_sequence_hook": "Great hooks are just the start. Let me show you how to generate entire posts, threads, and carousels automatically..."
+    }
+  ],
+  "recommended_pick": {
+    "choice": "The Content Multiplication Template Pack",
+    "reasoning": "Templates have highest perceived value and immediate utility. They demonstrate the framework without being overwhelming, create quick wins that build trust, and naturally lead to 'I wish someone would fill these in for me' which is exactly what the product does."
+  },
+  "delivery_system": {
+    "tool_recommendations": [
+      "ConvertKit for delivery and sequence",
+      "Notion for template hosting (shareable links)",
+      "Google Drive as backup delivery"
+    ],
+    "delivery_flow": [
+      "User enters email on landing page",
+      "Immediate email with download link",
+      "Link goes to Notion template page (requires duplication)",
+      "Thank you page shows quick start video",
+      "User added to nurture sequence"
+    ],
+    "upsell_opportunity": "Thank you page offers 'Want these filled in automatically? Try RepurposeAI free for 14 days.'"
+  }
+}
+```
+
+---
+
+## 8. SALES FUNNEL
+
+```json
+{
+  "funnel_type": "Free Trial Funnel",
+  "stages": [
+    {
+      "stage": "awareness",
+      "goal": "Introduce creators to the concept of content multiplication",
+      "customer_mindset": "I'm overwhelmed with content creation. I see other creators everywhere but can't figure out how they do it.",
+      "touchpoints": [
+        "Organic Twitter threads about repurposing",
+        "YouTube tutorials on content strategy",
+        "Podcast guest appearances",
+        "TikTok tips and before/after videos",
+        "SEO blog posts"
+      ],
+      "content_types": ["educational threads", "how-to videos", "case studies", "quick tips"],
+      "key_messages": [
+        "Your content has 10x the value you're extracting",
+        "Top creators aren't working harder, they're systemizing",
+        "One video can fuel an entire week of content"
+      ],
+      "conversion_action": "Engage with content (like, save, follow)",
+      "success_metric": "Impressions, engagement rate, follower growth",
+      "tools": ["Twitter Analytics", "YouTube Studio", "TikTok Analytics"]
+    },
+    {
+      "stage": "interest",
+      "goal": "Capture email via lead magnet",
+      "customer_mindset": "This content multiplication thing sounds valuable. I want to learn more about how to do it.",
+      "touchpoints": [
+        "Lead magnet landing pages",
+        "Content upgrades in blog posts",
+        "Bio link offers",
+        "YouTube description CTAs"
+      ],
+      "content_types": ["templates", "guides", "calculators", "swipe files"],
+      "key_messages": [
+        "Get the exact framework top creators use",
+        "Free templates to start multiplying today",
+        "See how much time you could save"
+      ],
+      "conversion_action": "Download lead magnet (email capture)",
+      "success_metric": "Lead magnet conversion rate (target: 40%+)",
+      "tools": ["ConvertKit", "Landing page builder"]
+    },
+    {
+      "stage": "consideration",
+      "goal": "Nurture leads toward trial through email",
+      "customer_mindset": "I understand the concept and have the templates. But it still seems like a lot of work to do manually.",
+      "touchpoints": [
+        "Email nurture sequence",
+        "Retargeting ads",
+        "Social proof content"
+      ],
+      "content_types": ["case studies", "product demos", "comparison content"],
+      "key_messages": [
+        "What if AI could do this in 10 minutes?",
+        "See how [Creator] grew 10x with automation",
+        "Manual repurposing vs RepurposeAI"
+      ],
+      "conversion_action": "Click through to product page / trial signup page",
+      "success_metric": "Email CTR, page visits from email",
+      "tools": ["ConvertKit", "Meta Ads", "Google Analytics"]
+    },
+    {
+      "stage": "intent",
+      "goal": "Get user to start free trial",
+      "customer_mindset": "This could work for me. Let me try it and see if the output is actually good.",
+      "touchpoints": [
+        "Product landing page",
+        "Pricing page",
+        "Trial signup flow"
+      ],
+      "content_types": ["live demos", "output examples", "testimonials", "pricing comparison"],
+      "key_messages": [
+        "Try free for 14 days, no card required",
+        "See your first results in 10 minutes",
+        "Join 12,000+ creators"
+      ],
+      "conversion_action": "Start free trial",
+      "success_metric": "Landing page to trial conversion (target: 8%)",
+      "tools": ["Website analytics", "Mixpanel"]
+    },
+    {
+      "stage": "evaluation",
+      "goal": "Get user to experience value (upload first video, see outputs)",
+      "customer_mindset": "Let's see if this actually works for my content and my niche.",
+      "touchpoints": [
+        "Onboarding flow",
+        "In-app guidance",
+        "Onboarding emails"
+      ],
+      "content_types": ["tooltips", "video tutorials", "email nudges"],
+      "key_messages": [
+        "Upload your first video in 2 minutes",
+        "Here's what we created from your video",
+        "Creators in your niche see best results with X"
+      ],
+      "conversion_action": "Upload first video + review outputs",
+      "success_metric": "Activation rate: first video within 24 hours (target: 60%)",
+      "tools": ["Product analytics", "Customer.io"]
+    },
+    {
+      "stage": "purchase",
+      "goal": "Convert trial to paid subscription",
+      "customer_mindset": "This is working. It's saving me time. Is it worth the monthly cost?",
+      "touchpoints": [
+        "Trial expiration emails",
+        "In-app upgrade prompts",
+        "Usage milestone emails"
+      ],
+      "content_types": ["ROI summaries", "upgrade prompts", "discount offers"],
+      "key_messages": [
+        "You've saved X hours this trial",
+        "You've created Y pieces of content",
+        "Continue for $29/month (less than 1 hour of your time)"
+      ],
+      "conversion_action": "Enter payment and subscribe",
+      "success_metric": "Trial to paid conversion (target: 15%)",
+      "tools": ["Stripe", "Customer.io"]
+    }
+  ],
+  "traffic_sources": [
+    {
+      "source": "Organic Twitter/X",
+      "cost": "Free (time investment)",
+      "volume": "High",
+      "quality": "High (engaged creators)",
+      "recommended": true
+    },
+    {
+      "source": "YouTube SEO",
+      "cost": "Free (time investment)",
+      "volume": "Medium",
+      "quality": "Very High (intent-driven)",
+      "recommended": true
+    },
+    {
+      "source": "Meta Ads (Instagram/Facebook)",
+      "cost": "$5-15 CPA",
+      "volume": "High",
+      "quality": "Medium",
+      "recommended": true
+    },
+    {
+      "source": "TikTok Organic",
+      "cost": "Free",
+      "volume": "High (variable)",
+      "quality": "Medium (younger skew)",
+      "recommended": true
+    },
+    {
+      "source": "Google Ads",
+      "cost": "$15-30 CPA",
+      "volume": "Medium",
+      "quality": "High (intent-driven)",
+      "recommended": false
+    },
+    {
+      "source": "Affiliate/Creator partnerships",
+      "cost": "20-30% rev share",
+      "volume": "Medium",
+      "quality": "Very High",
+      "recommended": true
+    }
+  ],
+  "conversion_optimization": [
+    {
+      "stage": "awareness → interest",
+      "tactic": "Add lead magnet CTA to all high-performing content",
+      "expected_lift": "+30% email capture"
+    },
+    {
+      "stage": "interest → consideration",
+      "tactic": "Add product demo video to email day 3",
+      "expected_lift": "+20% CTR"
+    },
+    {
+      "stage": "intent → evaluation",
+      "tactic": "Reduce signup form to email-only",
+      "expected_lift": "+40% trial starts"
+    },
+    {
+      "stage": "evaluation → purchase",
+      "tactic": "Send personalized output summary on day 7",
+      "expected_lift": "+25% conversion"
+    }
+  ],
+  "funnel_math": {
+    "monthly_visitors": "50,000",
+    "lead_conversion": "5% → 2,500 leads",
+    "trial_conversion": "15% of leads → 375 trials",
+    "sales_conversion": "15% of trials → 56 customers",
+    "average_order_value": "$55 blended MRR",
+    "monthly_revenue_estimate": "$3,080 new MRR"
+  },
+  "tech_stack": [
+    "ConvertKit (email)",
+    "Stripe (payments)",
+    "Mixpanel (product analytics)",
+    "Google Analytics (web)",
+    "Meta Ads Manager",
+    "Customer.io (behavioral email)"
+  ]
+}
+```
+
+---
+
+## 9. SEO CONTENT
+
+```json
+{
+  "seo_strategy": "Target high-intent keywords around content repurposing, video-to-social conversion, and platform-specific content creation. Build topical authority through comprehensive guides and comparison content.",
+  "target_keywords": [
+    {
+      "keyword": "content repurposing tool",
+      "search_volume": "1,900/mo",
+      "difficulty": "medium",
+      "intent": "commercial",
+      "priority": 1,
+      "content_type": "landing"
+    },
+    {
+      "keyword": "repurpose youtube videos",
+      "search_volume": "1,300/mo",
+      "difficulty": "medium",
+      "intent": "informational",
+      "priority": 2,
+      "content_type": "guide"
+    },
+    {
+      "keyword": "turn video into social media posts",
+      "search_volume": "880/mo",
+      "difficulty": "low",
+      "intent": "informational",
+      "priority": 3,
+      "content_type": "guide"
+    },
+    {
+      "keyword": "youtube to twitter thread",
+      "search_volume": "720/mo",
+      "difficulty": "low",
+      "intent": "transactional",
+      "priority": 4,
+      "content_type": "landing"
+    },
+    {
+      "keyword": "video to blog post converter",
+      "search_volume": "590/mo",
+      "difficulty": "low",
+      "intent": "transactional",
+      "priority": 5,
+      "content_type": "landing"
+    },
+    {
+      "keyword": "content repurposing strategy",
+      "search_volume": "1,100/mo",
+      "difficulty": "medium",
+      "intent": "informational",
+      "priority": 6,
+      "content_type": "guide"
+    },
+    {
+      "keyword": "how to repurpose podcast content",
+      "search_volume": "480/mo",
+      "difficulty": "low",
+      "intent": "informational",
+      "priority": 7,
+      "content_type": "guide"
+    },
+    {
+      "keyword": "repurpose.io alternative",
+      "search_volume": "390/mo",
+      "difficulty": "low",
+      "intent": "commercial",
+      "priority": 8,
+      "content_type": "comparison"
+    },
+    {
+      "keyword": "AI content generator for creators",
+      "search_volume": "720/mo",
+      "difficulty": "high",
+      "intent": "commercial",
+      "priority": 9,
+      "content_type": "landing"
+    },
+    {
+      "keyword": "make clips from youtube video",
+      "search_volume": "2,400/mo",
+      "difficulty": "medium",
+      "intent": "informational",
+      "priority": 10,
+      "content_type": "guide"
+    }
+  ],
+  "content_clusters": [
+    {
+      "pillar_topic": "Content Repurposing",
+      "pillar_keyword": "content repurposing strategy",
+      "pillar_article_title": "The Complete Guide to Content Repurposing in 2024",
+      "cluster_articles": [
+        {
+          "title": "How to Repurpose YouTube Videos Into 20+ Pieces of Content",
+          "keyword": "repurpose youtube videos",
+          "internal_link_to": "pillar"
+        },
+        {
+          "title": "Podcast Repurposing: Turn Episodes Into Social Content",
+          "keyword": "repurpose podcast content",
+          "internal_link_to": "pillar"
+        },
+        {
+          "title": "10 Content Repurposing Tools Compared (2024)",
+          "keyword": "content repurposing tools",
+          "internal_link_to": "pillar"
+        },
+        {
+          "title": "Content Repurposing Examples: Before and After",
+          "keyword": "content repurposing examples",
+          "internal_link_to": "pillar"
+        }
+      ]
+    },
+    {
+      "pillar_topic": "Video to Social Media",
+      "pillar_keyword": "turn video into social media posts",
+      "pillar_article_title": "How to Turn Any Video Into Social Media Content (Step-by-Step)",
+      "cluster_articles": [
+        {
+          "title": "YouTube to Twitter Thread: Convert Videos in Minutes",
+          "keyword": "youtube to twitter thread",
+          "internal_link_to": "pillar"
+        },
+        {
+          "title": "How to Make Instagram Carousels From Video Content",
+          "keyword": "video to instagram carousel",
+          "internal_link_to": "pillar"
+        },
+        {
+          "title": "Turn Long Videos Into TikTok Clips (Complete Guide)",
+          "keyword": "long video to tiktok clips",
+          "internal_link_to": "pillar"
+        },
+        {
+          "title": "Video to LinkedIn Posts: What Actually Works",
+          "keyword": "video to linkedin posts",
+          "internal_link_to": "pillar"
+        }
+      ]
+    }
+  ],
+  "article_briefs": [
+    {
+      "title": "How to Repurpose YouTube Videos Into 20+ Pieces of Content",
+      "target_keyword": "repurpose youtube videos",
+      "secondary_keywords": ["youtube content repurposing", "youtube video clips", "turn youtube into tiktok"],
+      "search_intent": "Learn the process and tools for repurposing YouTube content across platforms",
+      "word_count": 2500,
+      "outline": [
+        {
+          "h2": "Why Repurposing YouTube Content Is Essential in 2024",
+          "h3s": ["The creator economy shift", "Algorithm changes favor multi-platform presence"],
+          "key_points": ["Stats on creator growth with repurposing", "Time investment vs return"]
+        },
+        {
+          "h2": "The Content Multiplication Framework",
+          "h3s": ["Extraction: What to pull from videos", "Transformation: Adapting for each platform"],
+          "key_points": ["List every content type possible from one video", "Platform-specific requirements"]
+        },
+        {
+          "h2": "Step-by-Step: Repurposing One YouTube Video",
+          "h3s": ["Twitter threads", "LinkedIn posts", "Instagram carousels", "TikTok/Shorts clips", "Newsletter content", "Blog posts"],
+          "key_points": ["Exact process for each", "Tools to use", "Examples"]
+        },
+        {
+          "h2": "Tools for YouTube Content Repurposing",
+          "h3s": ["Manual tools", "AI-powered options", "RepurposeAI walkthrough"],
+          "key_points": ["Compare time investment", "Cost analysis"]
+        },
+        {
+          "h2": "Scheduling Your Repurposed Content",
+          "h3s": ["The 7-day content calendar", "Best posting times by platform"],
+          "key_points": ["Template included", "Real schedule example"]
+        }
+      ],
+      "internal_links": ["content repurposing strategy pillar", "youtube to twitter thread"],
+      "external_link_opportunities": ["YouTube Creator Academy", "Platform-specific best practices"],
+      "meta_title": "How to Repurpose YouTube Videos: Turn 1 Video Into 20+ Posts",
+      "meta_description": "Learn the step-by-step framework to repurpose YouTube videos into Twitter threads, LinkedIn posts, TikToks, and more. Free templates included.",
+      "featured_snippet_opportunity": "List: Types of content you can create from one YouTube video"
+    }
+  ],
+  "technical_seo_checklist": [
+    "Schema markup for articles (Article, HowTo)",
+    "Video schema for embedded demos",
+    "FAQ schema on landing pages",
+    "Image alt text with keywords",
+    "Internal linking between cluster content",
+    "Mobile-optimized page speed (<3s)",
+    "Core Web Vitals passing"
+  ],
+  "link_building_tactics": [
+    "Guest posts on creator economy blogs (Creator Science, The Publish Press)",
+    "Podcast appearances with backlinks in show notes",
+    "HARO responses for creator/marketing topics",
+    "Create linkable assets (studies, statistics, templates)",
+    "Partner content with complementary tools (video editors, schedulers)"
+  ]
+}
+```
+
+---
+
+## 10. TWEET-SIZED LANDING PAGE
+
+```json
+{
+  "versions": [
+    {
+      "version": 1,
+      "copy": "Turn 1 YouTube video into 20+ pieces of content.\n\nTwitter threads. TikTok clips. LinkedIn posts. Newsletters. Carousels.\n\nAll generated by AI in 10 minutes.\n\nTry free: repurpose.ai",
+      "angle": "benefit",
+      "cta_implied": "Try free"
+    },
+    {
+      "version": 2,
+      "copy": "You spend 4 hours making a video.\n\nThen it dies on one platform.\n\nTop creators turn that same video into 20 posts across 5 platforms.\n\nTheir secret? repurpose.ai",
+      "angle": "pain_point",
+      "cta_implied": "Check it out"
+    },
+    {
+      "version": 3,
+      "copy": "12,000 creators are saving 47 hours/month by letting AI repurpose their content.\n\nUpload video → Get threads, clips, carousels, newsletters.\n\nFree trial, no card: repurpose.ai",
+      "angle": "social_proof",
+      "cta_implied": "Join them"
+    },
+    {
+      "version": 4,
+      "copy": "What if your next YouTube video became:\n\n• 5 Twitter threads\n• 10 TikTok clips  \n• 3 carousels\n• 1 newsletter\n• 1 blog post\n\nAutomatically?\n\nThat's repurpose.ai",
+      "angle": "curiosity",
+      "cta_implied": "Learn more"
+    },
+    {
+      "version": 5,
+      "copy": "Your content team replacement costs $29/mo.\n\nUpload a video. Get a week of content.\n\nThreads. Clips. Carousels. Newsletters.\n\nAll platform-native. All AI-generated.\n\nrepurpose.ai — free trial",
+      "angle": "benefit",
+      "cta_implied": "Try it"
+    }
+  ],
+  "expanded_versions": [
+    {
+      "tweet_thread": [
+        {
+          "tweet_number": 1,
+          "content": "I used to spend 6 hours repurposing every YouTube video.\n\nNow I spend 10 minutes.\n\nHere's the tool that changed everything:"
+        },
+        {
+          "tweet_number": 2,
+          "content": "The problem: Your YouTube video takes 4 hours to make.\n\nThat same video could be 20 pieces of content.\n\nBut who has time to:\n- Cut clips\n- Write threads\n- Design carousels\n- Draft newsletters\n\nNot me. And probably not you."
+        },
+        {
+          "tweet_number": 3,
+          "content": "The solution: @RepurposeAI\n\nYou upload a video (or paste a YouTube link).\n\nAI watches it, understands it, and generates:\n\n• Twitter threads\n• LinkedIn posts\n• TikTok clips with captions\n• Instagram carousels\n• Newsletter drafts\n• Blog posts"
+        },
+        {
+          "tweet_number": 4,
+          "content": "The best part?\n\nEach piece is NATIVE to its platform.\n\nNot cross-posted garbage.\n\nActual platform-optimized content that performs."
+        },
+        {
+          "tweet_number": 5,
+          "content": "12,000+ creators are using it.\n\nAverage time saved: 47 hours/month.\n\nTry it free (no card needed): repurpose.ai"
+        }
+      ]
+    }
+  ],
+  "hashtag_recommendations": [
+    "#ContentCreator",
+    "#CreatorEconomy", 
+    "#YouTuber",
+    "#ContentStrategy",
+    "#SocialMediaMarketing"
+  ],
+  "best_posting_times": "Tuesday-Thursday, 8-10am EST or 12-2pm EST for maximum creator audience engagement"
+}
+```
+
+---
+
+## 11. USER PERSONAS
+
+```json
+{
+  "personas": [
+    {
+      "name": "Creator Casey",
+      "avatar_description": "28-year-old YouTuber with growing channel, works from home office with ring light and microphone visible",
+      "demographics": {
+        "age_range": "25-35",
+        "gender": "Any",
+        "location": "US/UK/Canada (English-speaking)",
+        "income": "$40K-$80K (mix of AdSense, sponsors, products)",
+        "education": "Bachelor's degree",
+        "job_title": "Full-time Content Creator",
+        "company_size": "Solo or small team (1-2)",
+        "industry": "Creator Economy"
+      },
+      "psychographics": {
+        "personality_traits": ["Ambitious", "Creative", "Slightly overwhelmed", "Growth-minded"],
+        "values": ["Authenticity", "Creative freedom", "Work-life balance", "Building community"],
+        "interests": ["Content strategy", "New platforms", "Gear and tools", "Creator news"],
+        "lifestyle": "Works non-traditional hours, constantly thinking about content, lives on social media"
+      },
+      "goals": [
+        "Grow audience across multiple platforms without working more hours",
+        "Land bigger sponsorship deals by showing multi-platform presence",
+        "Build sustainable business, not just a channel"
+      ],
+      "frustrations": [
+        "Spending all creative energy on one video, then having to manually repurpose",
+        "Seeing other creators everywhere and not understanding how they have time",
+        "Knowing they should be on TikTok/Twitter/LinkedIn but can't keep up"
+      ],
+      "motivations": [
+        "Fear of missing out on platform growth opportunities",
+        "Desire to compete with creators who have teams",
+        "Want to maximize ROI on content creation time"
+      ],
+      "fears": [
+        "Algorithm changes killing their one platform",
+        "Burning out trying to be everywhere",
+        "Competitors outpacing them"
+      ],
+      "objections": [
+        "Will the AI content actually sound like me?",
+        "Is the output good enough to post without heavy editing?",
+        "Can it handle my specific niche?"
+      ],
+      "buying_behavior": {
+        "research_process": "Asks creator friends, checks Twitter, watches YouTube reviews",
+        "decision_factors": ["Time saved vs cost", "Quality of output", "Ease of use"],
+        "preferred_channels": ["Twitter", "YouTube", "Creator newsletters"],
+        "budget_authority": "Full authority, but cost-conscious",
+        "purchase_timeline": "Quick decision if free trial proves value"
+      },
+      "day_in_the_life": "Wakes up, checks analytics and comments. Spends morning planning or filming. Afternoon editing. Evening engaging with audience and 'should be' repurposing but usually too tired.",
+      "quote": "I know my content could reach way more people. I just don't have time to be a one-person media company.",
+      "how_we_help": "Turn their weekly video into a full content calendar automatically, giving them multi-platform presence without extra work",
+      "marketing_message": "Your content deserves to be everywhere. Now it can be—without hiring a team.",
+      "channels_to_reach": ["Twitter/X", "YouTube pre-roll", "Creator newsletters", "Podcast ads"]
+    },
+    {
+      "name": "Podcaster Pete",
+      "avatar_description": "35-year-old podcast host, professional background (ex-marketing/consulting), records in home studio",
+      "demographics": {
+        "age_range": "30-45",
+        "gender": "Any",
+        "location": "US metro areas",
+        "income": "$80K-$150K (day job + podcast revenue)",
+        "education": "MBA or equivalent experience",
+        "job_title": "Podcaster (side hustle or transitioning full-time)",
+        "company_size": "Solo",
+        "industry": "Business/Marketing/Tech niche"
+      },
+      "psychographics": {
+        "personality_traits": ["Strategic", "Thoughtful", "Time-poor", "Quality-focused"],
+        "values": ["Expertise sharing", "Professional reputation", "Efficiency", "Thought leadership"],
+        "interests": ["Industry trends", "Networking", "Personal branding", "Productivity"],
+        "lifestyle": "Balancing podcast growth with career/family, time is precious"
+      },
+      "goals": [
+        "Turn podcast into lead generation for consulting/business",
+        "Build thought leadership presence on LinkedIn",
+        "Grow downloads and attract bigger guests"
+      ],
+      "frustrations": [
+        "Amazing conversations disappear after the episode airs",
+        "No time to write LinkedIn posts or newsletters consistently",
+        "Feels like leaving money on the table with unused content"
+      ],
+      "motivations": [
+        "Professional reputation and business opportunities",
+        "Making podcast investment worthwhile",
+        "Competing with others in their space"
+      ],
+      "fears": [
+        "Podcast being 'just a hobby' that never pays off",
+        "Missing the window on LinkedIn growth",
+        "Looking inconsistent or unprofessional"
+      ],
+      "objections": [
+        "Will it maintain the professional tone I need?",
+        "Can it extract the RIGHT insights, not just any insights?",
+        "Is it worth it for weekly/bi-weekly episodes?"
+      ],
+      "buying_behavior": {
+        "research_process": "LinkedIn recommendations, Google searches, asks mastermind group",
+        "decision_factors": ["ROI calculation", "Professionalism of output", "Integration with workflow"],
+        "preferred_channels": ["LinkedIn", "Google search", "Podcast ads"],
+        "budget_authority": "Full authority, views as business investment",
+        "purchase_timeline": "Needs to see demo, then quick decision"
+      },
+      "day_in_the_life": "Day job 9-5, podcast work in early morning or evening. Records 1-2x per week. Knows they should do more with each episode but time is impossible.",
+      "quote": "Every episode has 10 pieces of content in it. I just can't find the time to pull them out.",
+      "how_we_help": "Transform each episode into LinkedIn posts, newsletter content, and clips that build professional authority",
+      "marketing_message": "Your best insights are trapped in your podcast. Let's set them free.",
+      "channels_to_reach": ["LinkedIn", "Podcast app ads", "Business newsletters"]
+    },
+    {
+      "name": "Course Creator Carla",
+      "avatar_description": "40-year-old expert turned educator, has successful course business, looking to scale reach",
+      "demographics": {
+        "age_range": "35-50",
+        "gender": "Any",
+        "location": "US/UK/Australia",
+        "income": "$150K-$500K from courses/coaching",
+        "education": "Expert in their field (various)",
+        "job_title": "Course Creator / Online Educator",
+        "company_size": "1-5 (often has VA)",
+        "industry": "Online Education"
+      },
+      "psychographics": {
+        "personality_traits": ["Expert", "Teacher", "Entrepreneurial", "Scaling mindset"],
+        "values": ["Impact", "Transformation", "Leverage", "Quality education"],
+        "interests": ["Course platforms", "Marketing automation", "Scaling strategies", "Student success"],
+        "lifestyle": "Established business, looking for leverage, willing to invest in tools"
+      },
+      "goals": [
+        "Fill course launches with consistent content marketing",
+        "Build omnipresence to support premium pricing",
+        "Maximize value from webinars and training content"
+      ],
+      "frustrations": [
+        "Sitting on hours of valuable training content that's not being used",
+        "Launch periods require content sprint they can't sustain",
+        "Hiring content team is expensive and inconsistent"
+      ],
+      "motivations": [
+        "Scale reach without scaling time",
+        "Support premium positioning with authority content",
+        "Get more leverage from existing content investments"
+      ],
+      "fears": [
+        "Diluting brand with lower-quality content",
+        "Launch content not standing out",
+        "Wasting money on tools that don't deliver"
+      ],
+      "objections": [
+        "Will this maintain my professional brand standards?",
+        "Can it work with my existing course content?",
+        "Is the team/API plan worth it for my business?"
+      ],
+      "buying_behavior": {
+        "research_process": "Asks in mastermind groups, follows industry leaders' recommendations",
+        "decision_factors": ["ROI clearly demonstrable", "Professionalism", "Time saved for team"],
+        "preferred_channels": ["Industry masterminds", "Podcasts", "Direct referrals"],
+        "budget_authority": "Full authority, willing to pay for quality",
+        "purchase_timeline": "Longer consideration, but commits fully"
+      },
+      "day_in_the_life": "Strategic work in morning, student calls/community in afternoon, content planning is always 'next week' problem",
+      "quote": "I have 100 hours of training content. If I could just turn that into a year of social content, I'd never worry about marketing again.",
+      "how_we_help": "Transform their course content library into ongoing content machine that supports launches and nurtures audience year-round",
+      "marketing_message": "You've already created the content. Now let's make it work everywhere.",
+      "channels_to_reach": ["Course creator communities", "Podcasts for educators", "Facebook groups"]
+    }
+  ],
+  "primary_persona": "Creator Casey",
+  "persona_overlap": "All three personas share: (1) existing long-form content, (2) time scarcity, (3) desire for multi-platform presence, (4) willingness to pay for leverage. Message should emphasize time savings and content quality."
+}
+```
+
+---
+
+## 12. FEATURE SPECS
+
+```json
+{
+  "product_overview": "RepurposeAI transforms long-form video content into platform-native social media content, newsletters, and blog posts using AI. Users upload videos or paste YouTube links, and the system generates ready-to-publish content optimized for each platform.",
+  "core_features": [
+    {
+      "feature_name": "Video Upload & YouTube Import",
+      "description": "Accept video files (MP4, MOV, WebM) up to 3 hours or YouTube URLs for automatic processing",
+      "category": "core",
+      "priority": "must_have",
+      "user_stories": [
+        {
+          "as_a": "content creator",
+          "i_want": "to paste my YouTube video URL",
+          "so_that": "I can repurpose content without downloading and re-uploading",
+          "acceptance_criteria": [
+            "System accepts youtube.com and youtu.be URLs",
+            "Video metadata (title, description) is automatically imported",
+            "Processing starts within 60 seconds of URL submission",
+            "User sees progress indicator during download/processing"
+          ]
+        },
+        {
+          "as_a": "podcaster",
+          "i_want": "to upload my video file directly",
+          "so_that": "I can repurpose content not yet published on YouTube",
+          "acceptance_criteria": [
+            "Supports MP4, MOV, WebM formats",
+            "Maximum file size: 5GB",
+            "Maximum duration: 3 hours",
+            "Upload progress shown with percentage",
+            "Resume capability for interrupted uploads"
+          ]
+        }
+      ],
+      "technical_requirements": [
+        "YouTube Data API integration for metadata",
+        "Chunked upload for large files",
+        "Video storage in cloud (S3/GCS)",
+        "Transcription pipeline (Whisper API)"
+      ],
+      "dependencies": [],
+      "estimated_effort": "large",
+      "success_metrics": ["Upload completion rate >95%", "Average upload time <2min for 30min video"]
+    },
+    {
+      "feature_name": "AI Transcription & Analysis",
+      "description": "Automatically transcribe video audio and analyze content for key moments, topics, and repurposing opportunities",
+      "category": "core",
+      "priority": "must_have",
+      "user_stories": [
+        {
+          "as_a": "user",
+          "i_want": "my video automatically transcribed",
+          "so_that": "the AI can understand and repurpose my content",
+          "acceptance_criteria": [
+            "Transcription accuracy >95% for clear English audio",
+            "Speaker diarization for multi-person content",
+            "Timestamp alignment for clip extraction",
+            "Support for English (primary), Spanish, Portuguese (secondary)"
+          ]
+        },
+        {
+          "as_a": "user",
+          "i_want": "the AI to identify key moments and topics",
+          "so_that": "the repurposed content highlights my best insights",
+          "acceptance_criteria": [
+            "System identifies 5-10 key moments per 30min video",
+            "Topics/themes are extracted and labeled",
+            "High-engagement potential moments are flagged",
+            "User can review and adjust selections"
+          ]
+        }
+      ],
+      "technical_requirements": [
+        "Whisper API for transcription",
+        "GPT-4 for content analysis",
+        "Timestamp extraction and alignment",
+        "Topic clustering algorithm"
+      ],
+      "dependencies": ["Video Upload"],
+      "estimated_effort": "large",
+      "success_metrics": ["Transcription accuracy >95%", "Key moment relevance score >4/5 user rating"]
+    },
+    {
+      "feature_name": "Twitter Thread Generator",
+      "description": "Generate multiple Twitter thread variations from video content with hooks, insights, and CTAs",
+      "category": "core",
+      "priority": "must_have",
+      "user_stories": [
+        {
+          "as_a": "creator",
+          "i_want": "to get Twitter threads from my video",
+          "so_that": "I can grow my Twitter audience without writing from scratch",
+          "acceptance_criteria": [
+            "Generate 3-5 thread variations per video",
+            "Each thread is 5-12 tweets",
+            "Threads include strong hook, structured content, CTA",
+            "Character count validated for each tweet",
+            "Threads editable before export"
+          ]
+        }
+      ],
+      "technical_requirements": [
+        "GPT-4 thread generation prompt",
+        "Character count validation",
+        "Thread formatting (numbered vs flowing)",
+        "Copy to clipboard functionality"
+      ],
+      "dependencies": ["AI Transcription & Analysis"],
+      "estimated_effort": "medium",
+      "success_metrics": ["User edits <20% of generated content", "Thread engagement rate comparable to manual threads"]
+    },
+    {
+      "feature_name": "Short-Form Video Clip Generator",
+      "description": "Automatically identify and extract viral-worthy moments as vertical video clips with captions",
+      "category": "core",
+      "priority": "must_have",
+      "user_stories": [
+        {
+          "as_a": "YouTuber",
+          "i_want": "to get TikTok/Shorts/Reels clips from my video",
+          "so_that": "I can grow on short-form platforms",
+          "acceptance_criteria": [
+            "Generate 5-10 clip suggestions per 30min video",
+            "Clips are 30-90 seconds optimal length",
+            "Auto-crop to 9:16 vertical format",
+            "Auto-generated captions with styling options",
+            "Clips downloadable in platform-optimized formats"
+          ]
+        }
+      ],
+      "technical_requirements": [
+        "Video processing (FFmpeg)",
+        "AI moment detection",
+        "Auto-cropping with face detection",
+        "Caption generation and burn-in",
+        "Multiple export formats"
+      ],
+      "dependencies": ["AI Transcription & Analysis"],
+      "estimated_effort": "xl",
+      "success_metrics": ["Clips require <30sec manual editing", "User publishes >50% of suggested clips"]
+    },
+    {
+      "feature_name": "LinkedIn Post Generator",
+      "description": "Generate professional LinkedIn posts from video content with appropriate tone and formatting",
+      "category": "core",
+      "priority": "must_have",
+      "user_stories": [
+        {
+          "as_a": "professional creator",
+          "i_want": "LinkedIn posts from my video content",
+          "so_that": "I can build thought leadership without writing separately for LinkedIn",
+          "acceptance_criteria": [
+            "Generate 3-5 post variations",
+            "Professional tone appropriate for LinkedIn",
+            "Include line breaks and formatting for readability",
+            "Optional hashtag suggestions",
+            "Posts are 150-300 words optimal"
+          ]
+        }
+      ],
+      "technical_requirements": [
+        "GPT-4 LinkedIn-specific prompt",
+        "Tone adjustment parameters",
+        "Hashtag research integration"
+      ],
+      "dependencies": ["AI Transcription & Analysis"],
+      "estimated_effort": "medium",
+      "success_metrics": ["Posts match user's LinkedIn tone", "Engagement rate >2%"]
+    },
+    {
+      "feature_name": "Instagram Carousel Generator",
+      "description": "Generate carousel slide content with copy and design suggestions for Instagram",
+      "category": "differentiator",
+      "priority": "should_have",
+      "user_stories": [
+        {
+          "as_a": "creator",
+          "i_want": "carousel content from my video",
+          "so_that": "I can create engaging Instagram content without design skills",
+          "acceptance_criteria": [
+            "Generate carousel outline (8-10 slides)",
+            "Each slide has headline + supporting text",
+            "Cover slide has hook optimized for Instagram",
+            "Export as text or to Canva template",
+            "Design style suggestions included"
+          ]
+        }
+      ],
+      "technical_requirements": [
+        "Carousel structure generation",
+        "Canva API integration (optional)",
+        "Template system for consistent branding"
+      ],
+      "dependencies": ["AI Transcription & Analysis"],
+      "estimated_effort": "large",
+      "success_metrics": ["Carousels require <10min to finalize", "Save rate >5%"]
+    },
+    {
+      "feature_name": "Newsletter Draft Generator",
+      "description": "Generate email newsletter content summarizing video with key takeaways",
+      "category": "core",
+      "priority": "must_have",
+      "user_stories": [
+        {
+          "as_a": "creator with an email list",
+          "i_want": "newsletter drafts from my videos",
+          "so_that": "I can keep my email list engaged with consistent content",
+          "acceptance_criteria": [
+            "Generate full newsletter draft (400-600 words)",
+            "Include video summary, key takeaways, timestamps",
+            "Subject line variations (3 options)",
+            "Personal intro/outro suggestions",
+            "Export to common email tools (ConvertKit, Mailchimp)"
+          ]
+        }
+      ],
+      "technical_requirements": [
+        "Newsletter format generation",
+        "Subject line optimization",
+        "Email platform integrations"
+      ],
+      "dependencies": ["AI Transcription & Analysis"],
+      "estimated_effort": "medium",
+      "success_metrics": ["Newsletter open rate comparable to user's average", "Draft requires <15min editing"]
+    },
+    {
+      "feature_name": "Blog Post Converter",
+      "description": "Transform video transcript into SEO-optimized blog post",
+      "category": "core",
+      "priority": "must_have",
+      "user_stories": [
+        {
+          "as_a": "creator wanting to improve SEO",
+          "i_want": "blog posts from my videos",
+          "so_that": "I can drive organic search traffic to my content",
+          "acceptance_criteria": [
+            "Generate full blog post (1500-2500 words)",
+            "Include H2/H3 structure for SEO",
+            "Meta title and description included",
+            "Internal linking suggestions",
+            "Export as Markdown, HTML, or WordPress"
+          ]
+        }
+      ],
+      "technical_requirements": [
+        "Blog structure generation",
+        "SEO optimization layer",
+        "Multiple export formats",
+        "WordPress API integration (optional)"
+      ],
+      "dependencies": ["AI Transcription & Analysis"],
+      "estimated_effort": "medium",
+      "success_metrics": ["Blog posts index within 1 week", "SEO score >80 (Clearscope/Surfer)"]
+    },
+    {
+      "feature_name": "Content Dashboard",
+      "description": "Central hub to view, edit, and manage all generated content",
+      "category": "core",
+      "priority": "must_have",
+      "user_stories": [
+        {
+          "as_a": "user",
+          "i_want": "a dashboard to see all my generated content",
+          "so_that": "I can review, edit, and export everything in one place",
+          "acceptance_criteria": [
+            "View all content organized by video",
+            "Filter by content type (threads, clips, posts)",
+            "Edit any content inline",
+            "Bulk export options",
+            "Content status tracking (draft, scheduled, published)"
+          ]
+        }
+      ],
+      "technical_requirements": [
+        "Dashboard UI",
+        "Inline editing",
+        "Filter and search",
+        "Export functionality"
+      ],
+      "dependencies": ["All content generators"],
+      "estimated_effort": "large",
+      "success_metrics": ["User finds content in <10 seconds", "Dashboard load time <2 seconds"]
+    },
+    {
+      "feature_name": "Brand Voice Training",
+      "description": "Learn user's brand voice from examples to generate more personalized content",
+      "category": "differentiator",
+      "priority": "should_have",
+      "user_stories": [
+        {
+          "as_a": "creator with established brand voice",
+          "i_want": "the AI to match my writing style",
+          "so_that": "generated content sounds like me, not generic AI",
+          "acceptance_criteria": [
+            "User can input 5-10 example posts",
+            "System analyzes tone, vocabulary, structure",
+            "Generated content matches analyzed voice",
+            "Voice can be adjusted (more casual, more professional)",
+            "Multiple voice profiles for different platforms"
+          ]
+        }
+      ],
+      "technical_requirements": [
+        "Voice analysis model",
+        "Fine-tuned generation prompts",
+        "Voice profile storage"
+      ],
+      "dependencies": ["Content generators"],
+      "estimated_effort": "large",
+      "success_metrics": ["User rates voice match >4/5", "Editing time reduced 30%"]
+    }
+  ],
+  "feature_matrix": {
+    "free_tier": [],
+    "starter_tier": [
+      "Video upload (5/month)",
+      "YouTube import",
+      "AI transcription",
+      "Twitter threads",
+      "LinkedIn posts",
+      "TikTok clips (5/video)",
+      "Newsletter drafts",
+      "Blog posts",
+      "Basic dashboard"
+    ],
+    "creator_tier": [
+      "Everything in Starter",
+      "20 videos/month",
+      "Instagram carousels",
+      "10 clips/video",
+      "Brand voice training",
+      "Custom templates",
+      "Priority processing",
+      "Content calendar view"
+    ],
+    "pro_tier": [
+      "Everything in Creator",
+      "Unlimited videos",
+      "Team workspaces (3 seats)",
+      "API access",
+      "White-label exports",
+      "Dedicated support",
+      "Custom AI training"
+    ]
+  },
+  "integration_requirements": [
+    {
+      "integration": "YouTube API",
+      "purpose": "Video import and metadata",
+      "priority": "must_have"
+    },
+    {
+      "integration": "Buffer/Hootsuite",
+      "purpose": "Direct scheduling",
+      "priority": "should_have"
+    },
+    {
+      "integration": "ConvertKit/Mailchimp",
+      "purpose": "Newsletter export",
+      "priority": "should_have"
+    },
+    {
+      "integration": "Canva",
+      "purpose": "Carousel design",
+      "priority": "nice_to_have"
+    },
+    {
+      "integration": "WordPress",
+      "purpose": "Blog publishing",
+      "priority": "nice_to_have"
+    }
+  ],
+  "non_functional_requirements": {
+    "performance": [
+      "Video processing <10 minutes for 30-minute video",
+      "Content generation <60 seconds per content type",
+      "Dashboard load time <2 seconds",
+      "99.9% uptime"
+    ],
+    "security": [
+      "SOC 2 Type II compliance pathway",
+      "Video content encrypted at rest",
+      "User data not used for AI training",
+      "GDPR compliant"
+    ],
+    "scalability": [
+      "Handle 1000 concurrent video processes",
+      "Support 100K monthly active users",
+      "Auto-scaling for launch spikes"
+    ],
+    "accessibility": [
+      "WCAG 2.1 AA compliance",
+      "Keyboard navigation",
+      "Screen reader support"
+    ]
+  }
+}
+```
+
+---
+
+## 13. MVP ROADMAP (90 Days)
+
+```json
+{
+  "mvp_vision": "Launch a functional content repurposing tool that converts YouTube videos into Twitter threads, LinkedIn posts, and TikTok clips. Validate core value proposition with 500 paying users in 90 days.",
+  "success_criteria": [
+    "500 paying users ($29+ MRR each)",
+    "Trial to paid conversion >12%",
+    "User NPS >50",
+    "Core feature satisfaction >4/5"
+  ],
+  "phases": [
+    {
+      "phase": 1,
+      "name": "Foundation",
+      "duration": "Weeks 1-3",
+      "goal": "Core infrastructure and YouTube import working",
+      "features": [
+        {
+          "feature": "User auth and basic dashboard",
+          "priority": "p0",
+          "effort_days": 3,
+          "dependencies": []
+        },
+        {
+          "feature": "YouTube URL import",
+          "priority": "p0",
+          "effort_days": 4,
+          "dependencies": []
+        },
+        {
+          "feature": "Video transcription pipeline",
+          "priority": "p0",
+          "effort_days": 5,
+          "dependencies": ["YouTube import"]
+        },
+        {
+          "feature": "AI content analysis",
+          "priority": "p0",
+          "effort_days": 4,
+          "dependencies": ["Transcription"]
+        },
+        {
+          "feature": "Basic content dashboard",
+          "priority": "p0",
+          "effort_days": 3,
+          "dependencies": ["Auth"]
+        }
+      ],
+      "milestones": [
+        { "milestone": "YouTube video successfully transcribed", "date": "End of Week 2", "deliverable": "Working demo" },
+        { "milestone": "Key moments identified by AI", "date": "End of Week 3", "deliverable": "Analysis output" }
+      ],
+      "risks": ["Transcription API costs higher than expected", "YouTube API rate limits"],
+      "resources_needed": ["1 full-stack dev", "OpenAI API access", "Cloud infrastructure"]
+    },
+    {
+      "phase": 2,
+      "name": "Core Content Generation",
+      "duration": "Weeks 4-6",
+      "goal": "Twitter threads and LinkedIn posts generating reliably",
+      "features": [
+        {
+          "feature": "Twitter thread generator",
+          "priority": "p0",
+          "effort_days": 5,
+          "dependencies": ["AI analysis"]
+        },
+        {
+          "feature": "LinkedIn post generator",
+          "priority": "p0",
+          "effort_days": 4,
+          "dependencies": ["AI analysis"]
+        },
+        {
+          "feature": "Content editing interface",
+          "priority": "p0",
+          "effort_days": 4,
+          "dependencies": ["Dashboard"]
+        },
+        {
+          "feature": "Export/copy functionality",
+          "priority": "p0",
+          "effort_days": 2,
+          "dependencies": ["Content generators"]
+        },
+        {
+          "feature": "Basic email notifications",
+          "priority": "p1",
+          "effort_days": 2,
+          "dependencies": ["Auth"]
+        }
+      ],
+      "milestones": [
+        { "milestone": "First usable Twitter threads generated", "date": "End of Week 4", "deliverable": "Demo to beta users" },
+        { "milestone": "LinkedIn posts live", "date": "End of Week 5", "deliverable": "Feature complete" },
+        { "milestone": "Internal beta with 10 users", "date": "End of Week 6", "deliverable": "User feedback collected" }
+      ],
+      "risks": ["AI output quality inconsistent", "User expectations mismatch"],
+      "resources_needed": ["1 full-stack dev", "5-10 beta users", "Feedback collection system"]
+    },
+    {
+      "phase": 3,
+      "name": "Video Clips + Payments",
+      "duration": "Weeks 7-9",
+      "goal": "Short-form clips working, Stripe payments live",
+      "features": [
+        {
+          "feature": "Video clip extraction",
+          "priority": "p0",
+          "effort_days": 6,
+          "dependencies": ["AI analysis"]
+        },
+        {
+          "feature": "Auto-captions for clips",
+          "priority": "p0",
+          "effort_days": 4,
+          "dependencies": ["Clip extraction"]
+        },
+        {
+          "feature": "Stripe subscription integration",
+          "priority": "p0",
+          "effort_days": 4,
+          "dependencies": []
+        },
+        {
+          "feature": "Usage limits and metering",
+          "priority": "p0",
+          "effort_days": 3,
+          "dependencies": ["Stripe"]
+        },
+        {
+          "feature": "Landing page and pricing page",
+          "priority": "p0",
+          "effort_days": 3,
+          "dependencies": []
+        }
+      ],
+      "milestones": [
+        { "milestone": "First video clips generated", "date": "End of Week 7", "deliverable": "Working clips" },
+        { "milestone": "Payments working end-to-end", "date": "End of Week 8", "deliverable": "Test purchase successful" },
+        { "milestone": "Public beta launch", "date": "End of Week 9", "deliverable": "50 beta users signed up" }
+      ],
+      "risks": ["Video processing costs high", "Clip quality inconsistent"],
+      "resources_needed": ["1 full-stack dev", "Video processing infrastructure (FFmpeg)", "Stripe account"]
+    },
+    {
+      "phase": 4,
+      "name": "Launch & Iterate",
+      "duration": "Weeks 10-13",
+      "goal": "Public launch, hit 500 paying users",
+      "features": [
+        {
+          "feature": "Newsletter draft generator",
+          "priority": "p1",
+          "effort_days": 3,
+          "dependencies": ["AI analysis"]
+        },
+        {
+          "feature": "Onboarding flow optimization",
+          "priority": "p0",
+          "effort_days": 3,
+          "dependencies": []
+        },
+        {
+          "feature": "Email sequences (trial conversion)",
+          "priority": "p0",
+          "effort_days": 3,
+          "dependencies": []
+        },
+        {
+          "feature": "Analytics and user tracking",
+          "priority": "p1",
+          "effort_days": 3,
+          "dependencies": []
+        },
+        {
+          "feature": "Bug fixes and quality improvements",
+          "priority": "p0",
+          "effort_days": "ongoing",
+          "dependencies": []
+        }
+      ],
+      "milestones": [
+        { "milestone": "Product Hunt launch", "date": "Week 10", "deliverable": "Top 5 of the day" },
+        { "milestone": "100 paying users", "date": "Week 11", "deliverable": "Revenue milestone" },
+        { "milestone": "500 paying users", "date": "Week 13", "deliverable": "MVP success" }
+      ],
+      "risks": ["Launch doesn't get traction", "Churn higher than expected", "Competition launches similar"],
+      "resources_needed": ["1 full-stack dev", "Marketing support", "Customer support capacity"]
+    }
+  ],
+  "weekly_breakdown": [
+    {
+      "week": 1,
+      "focus": "Project setup and auth",
+      "tasks": [
+        "Set up Next.js project with TypeScript",
+        "Configure Supabase auth and database",
+        "Design database schema",
+        "Create basic layout components"
+      ],
+      "deliverables": ["Working auth flow", "Database schema deployed"],
+      "blockers_to_watch": ["Supabase setup issues"]
+    },
+    {
+      "week": 2,
+      "focus": "YouTube integration",
+      "tasks": [
+        "YouTube API integration",
+        "Video metadata extraction",
+        "Video download pipeline",
+        "Storage setup (S3)"
+      ],
+      "deliverables": ["Can import any YouTube video"],
+      "blockers_to_watch": ["YouTube API quotas"]
+    },
+    {
+      "week": 3,
+      "focus": "Transcription and analysis",
+      "tasks": [
+        "Whisper API integration",
+        "Transcription queue system",
+        "AI analysis prompts",
+        "Key moment extraction"
+      ],
+      "deliverables": ["Videos transcribed and analyzed"],
+      "blockers_to_watch": ["Whisper accuracy", "API costs"]
+    },
+    {
+      "week": 4,
+      "focus": "Twitter threads",
+      "tasks": [
+        "Thread generation prompts",
+        "Thread display UI",
+        "Character count validation",
+        "Copy functionality"
+      ],
+      "deliverables": ["Working Twitter thread generator"],
+      "blockers_to_watch": ["Thread quality"]
+    },
+    {
+      "week": 5,
+      "focus": "LinkedIn posts",
+      "tasks": [
+        "LinkedIn post prompts",
+        "Post variation generation",
+        "Professional tone adjustment",
+        "Hashtag suggestions"
+      ],
+      "deliverables": ["Working LinkedIn generator"],
+      "blockers_to_watch": ["Tone matching"]
+    },
+    {
+      "week": 6,
+      "focus": "Beta launch",
+      "tasks": [
+        "Content editing interface",
+        "Export functionality",
+        "Bug fixes from testing",
+        "Beta user recruitment"
+      ],
+      "deliverables": ["10 beta users testing"],
+      "blockers_to_watch": ["User feedback actionability"]
+    },
+    {
+      "week": 7,
+      "focus": "Video clip extraction",
+      "tasks": [
+        "FFmpeg integration",
+        "Clip identification algorithm",
+        "Vertical cropping",
+        "Clip preview UI"
+      ],
+      "deliverables": ["Basic clips generating"],
+      "blockers_to_watch": ["Processing time"]
+    },
+    {
+      "week": 8,
+      "focus": "Clips + Payments",
+      "tasks": [
+        "Auto-captions generation",
+        "Caption styling options",
+        "Stripe subscription setup",
+        "Pricing tiers implementation"
+      ],
+      "deliverables": ["Captioned clips", "Working payments"],
+      "blockers_to_watch": ["Stripe approval"]
+    },
+    {
+      "week": 9,
+      "focus": "Public beta prep",
+      "tasks": [
+        "Landing page",
+        "Pricing page",
+        "Usage metering",
+        "Email notifications"
+      ],
+      "deliverables": ["Ready for public beta"],
+      "blockers_to_watch": ["Conversion rate"]
+    },
+    {
+      "week": 10,
+      "focus": "Launch",
+      "tasks": [
+        "Product Hunt submission",
+        "Launch day support",
+        "Social media promotion",
+        "Bug triage"
+      ],
+      "deliverables": ["Successful PH launch"],
+      "blockers_to_watch": ["Server capacity", "Launch timing"]
+    }
+  ],
+  "tech_decisions": [
+    {
+      "decision": "Frontend framework",
+      "choice": "Next.js 14 (App Router)",
+      "reasoning": "Best DX for React, built-in API routes, Vercel deployment, good SEO"
+    },
+    {
+      "decision": "Database",
+      "choice": "Supabase (Postgres)",
+      "reasoning": "Includes auth, real-time, storage. Scales well. Good free tier for MVP."
+    },
+    {
+      "decision": "AI Provider",
+      "choice": "OpenAI (GPT-4o + Whisper)",
+      "reasoning": "Best quality for content generation, reliable API, reasonable pricing"
+    },
+    {
+      "decision": "Video processing",
+      "choice": "FFmpeg on serverless (Modal or dedicated server)",
+      "reasoning": "Industry standard, flexible, handles all formats"
+    },
+    {
+      "decision": "Payments",
+      "choice": "Stripe",
+      "reasoning": "Standard choice, good DX, handles subscriptions well"
+    },
+    {
+      "decision": "Hosting",
+      "choice": "Vercel + separate compute for video",
+      "reasoning": "Great Next.js integration, but need dedicated compute for long video processing"
+    }
+  ],
+  "launch_checklist": [
+    "Landing page live with clear value prop",
+    "Pricing page with three tiers",
+    "Free trial flow working (no card required)",
+    "Core features stable (YouTube import, threads, LinkedIn, clips)",
+    "Stripe payments tested end-to-end",
+    "Onboarding email sequence set up",
+    "Error monitoring in place (Sentry)",
+    "Analytics tracking (Mixpanel)",
+    "Support email/chat ready",
+    "Product Hunt assets prepared",
+    "Social proof (beta testimonials) collected",
+    "Legal pages (Privacy, Terms) live"
+  ],
+  "post_mvp_backlog": [
+    "Instagram carousel generator",
+    "Blog post converter",
+    "Brand voice training",
+    "Team workspaces",
+    "API access",
+    "Scheduling integrations (Buffer, Hootsuite)",
+    "Direct upload to platforms",
+    "Content calendar view",
+    "Analytics on published content",
+    "Mobile app"
+  ]
+}
+```
+
+---
+
+Due to length, I'll provide the remaining deliverables (14-20) in a follow-up. Should I continue with:
+
+- **14. PRD (Product Requirements Doc)**
+- **15. GTM Launch Calendar**
+- **16. GTM Strategy**
+- **17. KPI Dashboard**
+- **18. Pricing Strategy**
+- **19. Competitive Analysis**
+- **20. Customer Interview Guide**
+
+Just say "continue" and I'll generate the rest!
