@@ -1,9 +1,10 @@
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
-import { Lightbulb, TrendingUp, Rocket, ArrowRight, Sparkles, BarChart3, ListChecks } from 'lucide-react';
+import { Lightbulb, TrendingUp, Rocket, ArrowRight, Sparkles, BarChart3, ListChecks, Gauge, Megaphone, CheckCircle, Workflow } from 'lucide-react';
 import { Link } from 'wouter';
 import { useAuth } from '@/lib/auth';
 import { Logo } from '@/components/Logo';
+import { BentoCard, BentoGrid } from '@/components/ui/bento-grid';
 
 export default function Landing() {
   const { user } = useAuth();
@@ -200,6 +201,97 @@ export default function Landing() {
               </div>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* Experience Grid */}
+      <section className="py-24 bg-[hsl(var(--startup-bg-secondary))]">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-14">
+            <h2 className="font-serif text-3xl sm:text-4xl font-medium text-[hsl(var(--startup-ink))] leading-tight">
+              Move from spark to launch with clarity
+            </h2>
+            <p className="mt-4 text-muted-foreground max-w-2xl mx-auto">
+              StartupStack combines research, validation, and execution so you always know the next best move.
+            </p>
+          </div>
+
+          <BentoGrid>
+            <BentoCard
+              name="AI Idea Studio"
+              description="Generate startup concepts tailored to your skills and niches, complete with positioning and value props."
+              Icon={Sparkles}
+              href="/ideas"
+              cta="Browse validated ideas"
+              className="md:col-span-2"
+              background={
+                <div className="absolute inset-0">
+                  <div className="absolute inset-0 bg-gradient-to-br from-[hsl(var(--startup-accent))/0.10] via-white to-transparent" />
+                  <div className="absolute -right-10 -top-10 h-40 w-40 rounded-full bg-[hsl(var(--startup-accent))/0.15] blur-3xl" />
+                </div>
+              }
+            />
+
+            <BentoCard
+              name="Demand Radar"
+              description="Live trend signals, search lift, and audience intent so you ship what the market is already asking for."
+              Icon={Gauge}
+              href="/signup"
+              cta="See demand scores"
+              className="md:col-span-1"
+              background={
+                <div className="absolute inset-0">
+                  <div className="absolute inset-0 bg-gradient-to-br from-emerald-400/15 via-white to-transparent" />
+                  <div className="absolute -bottom-8 -left-6 h-32 w-32 rounded-full bg-emerald-500/20 blur-3xl" />
+                </div>
+              }
+            />
+
+            <BentoCard
+              name="Evidence to Greenlight"
+              description="Surveys, messaging tests, and willingness-to-pay prompts packaged into quick experiments."
+              Icon={Megaphone}
+              href="/signup"
+              cta="Run a fast test"
+              className="md:col-span-1"
+              background={
+                <div className="absolute inset-0">
+                  <div className="absolute inset-0 bg-gradient-to-br from-amber-400/14 via-white to-transparent" />
+                  <div className="absolute -right-8 bottom-0 h-28 w-28 rounded-full bg-amber-400/30 blur-2xl" />
+                </div>
+              }
+            />
+
+            <BentoCard
+              name="Execution Blueprints"
+              description="Week-by-week build plans with tickets, stack recommendations, and launch checklists ready to ship."
+              Icon={Workflow}
+              href="/dashboard"
+              cta="Preview the roadmap"
+              className="md:col-span-2"
+              background={
+                <div className="absolute inset-0">
+                  <div className="absolute inset-0 bg-gradient-to-br from-[hsl(var(--startup-bg-tertiary))/0.8] via-white to-transparent" />
+                  <div className="absolute left-10 top-6 h-24 w-24 rounded-full bg-[hsl(var(--startup-accent))/0.12] blur-2xl" />
+                </div>
+              }
+            />
+
+            <BentoCard
+              name="Founder Confidence"
+              description="Scorecards that combine market pull, effort, and risk so you can prioritize the ideas that win."
+              Icon={CheckCircle}
+              href="/pricing"
+              cta="See how scoring works"
+              className="md:col-span-1"
+              background={
+                <div className="absolute inset-0">
+                  <div className="absolute inset-0 bg-gradient-to-br from-slate-900/5 via-white to-transparent" />
+                  <div className="absolute right-6 top-6 h-20 w-20 rounded-full bg-slate-900/10 blur-xl" />
+                </div>
+              }
+            />
+          </BentoGrid>
         </div>
       </section>
 

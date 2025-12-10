@@ -10,7 +10,12 @@
     "check": "tsc",
     "db:push": "drizzle-kit push",
     "seed:contentpulse": "tsx scripts/seed-contentpulse.ts",
-    "seed:repurposeai": "tsx scripts/seed-repurposeai.ts"
+    "seed:repurposeai": "tsx scripts/seed-repurposeai.ts",
+    "seed:sponsorcalc": "tsx scripts/seed-sponsorcalc.ts",
+    "seed:listingpolish": "tsx scripts/seed-listingpolish.ts",
+    "seed:launchlist": "tsx scripts/seed-launchlist.ts",
+    "seed:runwayalert": "tsx scripts/seed-runwayalert.ts",
+    "seed:sopbuilder": "tsx scripts/seed-sopbuilder.ts"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.10.0",
